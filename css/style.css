@@ -10,20 +10,41 @@ body {
 }
 
 .article_title {
-    position: fixed; 
-    right: 5%; 
-    bottom: 6%; 
-    margin: 1px; 
-    padding: 0; 
-    font-family: Arial, sans-serif; 
-    font-size: 5vw; 
-    font-weight: 200; 
-    color: #000000; 
-    text-align: center; 
-    opacity: 0.6; 
-    writing-mode: vertical-rl;
+    position: fixed;
+    right: 5%;
+    bottom: 6%;
+    margin: 1px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 5vw; /* 반응형 크기 단위 */
+    font-weight: 200;
+    color: #000000;
+    text-align: center;
+    opacity: 0.6;
+    writing-mode: vertical-rl; /* 기본적으로 세로 쓰기 모드 */
     text-decoration: none;
 }
+
+/* 모바일 화면에 최적화된 설정 */
+@media (max-width: 768px) {
+    .article_title {
+        font-size: 6vw; /* 모바일에서는 글자 크기를 조금 더 키움 */
+        right: 3%; /* 모바일 화면에 맞게 위치 조정 */
+        bottom: 2%;
+        /* writing-mode: horizontal-tb; 모바일에서는 수평 쓰기 모드 */
+    }
+}
+
+@media (max-width: 480px) {
+    .article_title {
+        font-size: 6vw; /* 작은 화면에서는 더 큰 글자 크기 */
+        right: 2%; /* 위치를 더 세밀하게 조정 */
+        bottom: 2%;
+        /* writing-mode: horizontal-tb; 모바일에서는 수평 쓰기 모드 */
+    }
+}
+
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -36,4 +57,15 @@ td {
     width: 10%;
     height: 10%;
     border: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 이미지 가운데 정렬을 원할 경우 */
+  }
+
+  .highlight-right-border td:nth-child(1) {
+    border-right: 0.5px solid black;
 }
