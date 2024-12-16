@@ -236,7 +236,7 @@ body {
 }
 
 a{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration-thickness: 0.7px;
     text-underline-offset : 5px;
 
