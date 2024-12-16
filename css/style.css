@@ -167,65 +167,38 @@ pre {
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
-    background-color: ta;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    /* padding: 10px 20px; */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 그림자 방향 위로 */
-    z-index: 1000;
-    font-family: 'joseon';
-
+    width: 100%; /* 화면 전체 너비에 맞춤 */
     max-width: 650px;
-    line-height: 2;
-    border-top: 1.5px solid rgba(0, 0, 0, 0.5); /* 파란색, 50% 투명도 */
-    height: 50px;
-    text-decoration: none;
-
+    background-color: rgb(255, 255, 255); /* 배경색 */
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between; /* 양쪽 정렬 */
+    align-items: center;
+    padding: 10px 20px; /* 내부 여백 추가 */
+    z-index: 1000;
+    font-family: 'joseon', sans-serif;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.5);
+    height: auto; /* 높이를 콘텐츠에 맞게 */
+    line-height: 1.5; /* 텍스트 간격 */
+    overflow: hidden; /* 넘치는 콘텐츠 숨김 */
+    box-sizing: border-box; /* 패딩 포함한 크기 계산 */
 }
 
-footer .logo {
-    color: white;
-    display: flex; /* logo를 flex 컨테이너로 설정 */
-    justify-content: flex-end; /* 우측 정렬 */
-    font-family: 'joseon';
-    margin-right: 15px;
-    text-decoration: none;
+.footer-left {
+    flex: 1; /* 왼쪽 영역 확장 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
 }
 
-footer .logo a {
-    color: white;
-    font-size: 1.2em;
-    text-decoration: none;
-    margin-left: 10px;
-    justify-content: flex-end;
-    font-family: 'joseon';
-    margin-right: 10px;
+.footer-right {
+    text-align: right; /* 이미지 오른쪽 정렬 */
 }
 
-footer .logo2 {
-    color: white;
-    font-size: 1.2em;
-    text-decoration: none;
-    justify-content: left;
-    width: 100%;
-    font-family: 'joseon';
-    margin-left: 10px;
+.footer-right img {
+    max-width: 60px; /* 이미지 크기 제한 */
+    height: auto;
 }
 
-footer .logo2 a {
-    color: white; /* 항상 흰색으로 표시 */
-    text-decoration: none; /* 밑줄 제거 */
-}
-
-footer .logo2 a:hover,
-footer .logo2 a:focus,
-footer .logo2 a:active {
-    color: white; /* 마우스를 올리거나 포커스 되었을 때도 흰색 유지 */
-    text-decoration: none; /* 선택될 때 밑줄 제거 */
-}
 
 
 
