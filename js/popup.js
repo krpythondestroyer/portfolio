@@ -14,7 +14,7 @@ function showPopup(event, id) {
     
     // 오버레이 표시
     document.querySelector('.popup-overlay').style.display = 'block';
-}
+
 
 // 팝업 숨기기 함수
 function hidePopup() {

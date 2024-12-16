@@ -4,9 +4,9 @@ body {
     max-width: 650px;
     line-height: 1.5;
     font-size: 18px;
-    color: #ffffff;
+    color: #000000;
     padding: 0 10px;
-    background-color: #000000;
+    background-color: #ffffff;
     font-family: 'joseon';
     letter-spacing: 0.5;
     
@@ -284,3 +284,14 @@ p {
 
 
 
+.container {
+    display: flex;
+    justify-content: space-between; /* 자식 요소를 양 끝으로 배치 */
+    align-items: center; /* 수직 정렬 */
+    width: 100%; /* 부모 요소 너비를 전체로 설정 */
+  }
+  
+  h3 {
+    margin: 0; /* 기본 여백 제거 */
+  }
+  
