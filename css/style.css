@@ -174,7 +174,7 @@ footer {
     display: flex;
     justify-content: space-between; /* 양쪽 정렬 */
     align-items: center;
-    padding: 10px 20px; /* 내부 여백 추가 */
+    padding: 0px 20px; /* 내부 여백 추가 */
     z-index: 1000;
     font-family: 'joseon', sans-serif;
     border-top: 1.5px solid rgba(0, 0, 0, 0.5);
