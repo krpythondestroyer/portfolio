@@ -212,7 +212,7 @@ a{
     color: rgb(0, 0, 0);
     text-decoration-thickness: 0.7px;
     text-underline-offset : 5px;
-
+    text-decoration: none; /* 밑줄 없애기 */
     padding-bottom: 1px; /* 아랫부분에 약간의 패딩 추가 (HR과 비슷한 위치를 위해) */
     display: inline-block; /* 인라인 블록으로 설정하여 마진 조정 가능 */
 }
