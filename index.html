@@ -43,10 +43,10 @@
     <hr>
     <style>
 /* Flexbox를 활용한 수평 배치 */
-/* Flexbox를 활용한 수평 배치 */
 .flex-container {
     display: flex;               /* Flexbox 활성화 */
     gap: 20px;                   /* 항목 간의 간격 */
+    flex-direction: row;         /* 기본적으로 항목을 좌우로 배치 */
 }
 
 .flex-container > div {
@@ -58,6 +58,18 @@
 summary {
     cursor: pointer;            /* summary 클릭 가능 표시 */
 }
+
+/* 화면 너비가 768px 이하일 때 세로 배치로 변경 */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* 세로 배치로 변경 */
+    }
+
+    .flex-container > div {
+        flex-basis: 100%;       /* 모바일에서는 각 div가 100% 너비를 차지하도록 설정 */
+    }
+}
+
 
 
 
@@ -97,8 +109,8 @@ summary {
             </details>
         </li>
         <li>국회예산정책처 거시경제분석과 인턴 (20.07 ~ 20.08)</li>
-        <hr>
     </ul>
+    <hr>
     
     <h3>학력</h3>
     <ul>
