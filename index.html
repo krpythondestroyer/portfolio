@@ -182,7 +182,7 @@
         const phone = document.getElementById("phoneNumber").textContent.trim();
         navigator.clipboard.writeText(phone)
             .then(() => {
-                alert(`${phone} 복사 완료 :)`);
+                alert(`${phone} 복사 완료`);
             })
             .catch(err => {
                 alert("복사에 실패했습니다.");
@@ -194,7 +194,7 @@
         const email = document.getElementById("emailAddress").textContent.trim();
         navigator.clipboard.writeText(email)
             .then(() => {
-                alert(`${email} 복사 완료 :)`);
+                alert(`${email} 복사 완료 `);
             })
             .catch(err => {
                 alert("복사에 실패했습니다.");
