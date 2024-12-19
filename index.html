@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>안녕하세요 :)</title>
+    <title>이후석입니다 :)</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2>이후석</h2>
+        <a href="https://krpythondestroyer.github.io/portfolio/"><h2>이후석</h2></a>
     </div>
 
     <hr>
@@ -88,15 +88,45 @@
 <br>
 <br>
 
-    <footer>
-        <div class="footer-left">
-            010-9197-9367 starpeeker@naver.com  
-            <br>서울특별시 구로구 경인로 65길 16-15 1115-1202
-        </div>
-        <div class="footer-right">
-            <img src="./images/QR.jpg" alt="QR Code" style="width: 55px;">
-        </div>
-    </footer>
+<footer>
+    <div class="footer-left">
+        <span class="copyable">010-9197-9367</span> | 
+        <span class="copyable">starpeeker@naver.com</span> | 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2GcE_3kBHR5beVBwI2P0mEq3LfkRURghw6-w7ttjuY-oBEA/viewform">VOC</a>
+    </div>
+    <div class="footer-right">
+        <img src="./images/QR.jpg" alt="QR Code" style="width: 55px;">
+    </div>
+</footer>
+
+
+
+<script>
+    // 복사 가능한 요소들에 이벤트 리스너 추가
+    document.querySelectorAll(".copyable").forEach(element => {
+        element.addEventListener("click", function () {
+            const textToCopy = this.textContent.trim();
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert(`${textToCopy} 복사 완료 :)
+                     `);
+                })
+                .catch(err => {
+                    alert("복사에 실패했습니다.");
+                    console.error(err);
+                });
+        });
+    });
+</script>
+
+<style>
+    .copyable {
+        text-decoration: underline;
+        cursor: pointer; /* 마우스 커서 모양 변경 */
+    }
+</style>
+
+
     
     
     
