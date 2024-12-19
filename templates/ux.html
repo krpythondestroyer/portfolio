@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
 </head>
 <body>
     <h3>UX</h3>
@@ -18,11 +17,17 @@
         </li>
         <li>추천 아티클
             <ul>
-                <li><a href="https://brunch.co.kr/magazine/uxlabel">라인 UX WRITER 전주경 브런치</a></li>
+                <li><a href="#" id="feedbackLink">라인 UX WRITER 전주경 브런치</a></li>
             </ul>
         </li>
     </ul>
-    
 
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup" style="text-align: center;">
+        <p>아티클 페이지로 이동할까요?</p>
+        <button id="confirmNo">아니오</button>
+        <button id="confirmYes2">예</button>
+    </div>
+    <script src="../js/content.js"></script> <!-- JavaScript 파일을 body 끝에 배치 -->
 </body>
 </html>

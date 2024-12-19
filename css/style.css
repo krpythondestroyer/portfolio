@@ -98,11 +98,53 @@ a {
     padding-bottom: 1px;
     display: inline-block;
 }
+
+/* 평소 상태 */
+#phoneIcon::before {
+    content: "✆"; /* 전화기 아이콘 표시 */
+}
+
+#emailIcon::before {
+    content: "✉︎"; /* 이메일 아이콘 표시 */
+}
+
+#specialLink::before {
+    content: "✒︎"; /* 평소에는 ✒︎ 표시 */
+}
+
+/* PDF 저장 시 */
 @media print {
+    #phoneIcon::before {
+        content: "010-9197-9367"; /* PDF에서는 전화 아이콘으로 변경 */
+    }
+
+    #emailIcon::before {
+        content: "starpeeker@naver.com"; /* PDF에서는 이메일 아이콘으로 변경 */
+        
+    }
+
+    #specialLink::before {
+        content: ""; /* PDF에서는 링크 아이콘으로 변경 */
+    }
+
+
+    #specialLink {
+        text-decoration: none; /* PDF에서 링크의 밑줄 없애기 */
+    }
+
     a {
-        text-decoration: none;
+        text-decoration: none; /* PDF 저장 시 모든 링크의 밑줄 없애기 */
+        pointer-events: none; /* PDF에서 모든 링크 클릭 비활성화 */
+        cursor: default; /* 마우스 커서를 기본 상태로 변경 */
+    }
+
+    /* 링크의 href 속성도 제거 */
+    a[href] {
+        pointer-events: none; /* 링크 비활성화 */
     }
 }
+
+
 
 /* HR styles */
 hr {
@@ -147,3 +189,76 @@ pre {
 h3 {
     margin: 0;
 }
+
+        /* 간단한 스타일링 */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: #000000;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            width: auto;
+            max-width: 500px;
+            overflow: hidden;
+        }
+        
+        .popup button {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #242627;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .popup button:hover {
+            background-color: #232527;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+        
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .popup {
+                position: fixed;
+                top: 50%; /* 뷰포트 기준 중앙 */
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto; /* 글자수에 맞춰 넓이 자동 조정 */
+                max-width: 700px;
+                padding: 15px;
+                background-color: white;
+                color: #000000;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                overflow: hidden;
+                white-space: nowrap; /* 글자가 한 줄로 나오도록 */
+                text-overflow: ellipsis; /* 넘치는 텍스트는 '...'으로 표시 */
+                
+            }
+        
+            .popup button {
+                padding: 8px 16px; /* 버튼 크기 조정 */
+                font-size: 12px; /* 작은 화면에 맞춘 폰트 크기 */
+            }
+        }
+        
+        

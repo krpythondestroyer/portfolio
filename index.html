@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이후석입니다 :)</title>
+    <title>이후석</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
@@ -14,14 +14,32 @@
                 &nbsp;&nbsp;&nbsp;2024.12.19
             </div> -->
             <div style="margin: 0;"> <!-- 첫 번째 div의 마진을 0으로 설정 -->
-                <h3 style="margin: 0;"> <!-- 두 번째 h2 마진을 0으로 설정 -->
-                    <span id="phoneIcon">✆</span> 
-                    <span id="emailIcon">✉︎</span>
-                    <a href="https://krpythondestroyer.github.io/portfolio/" style="text-decoration: none;">🌐</a>
-                </h3>
+        <h3 style="margin: 0;">
+            <span id="phoneIcon"></span>
+            <span id="emailIcon"></span>
+            <!-- <span id="specialLink"></span> -->
+
+        </h3>
             </div>
         </div>
     </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const specialLink = document.getElementById("specialLink");
+
+    // PDF 저장 시 링크 변경
+    window.onbeforeprint = function () {
+        specialLink.href = "https://krpythondestroyer.github.io/portfolio/"; // PDF에서만 다른 링크로 변경
+    };
+
+    // PDF 저장 후 다시 원래 링크로 돌아가도록 설정
+    window.onafterprint = function () {
+        specialLink.href = "https://krpythondestroyer.github.io/portfolio/"; // 평소 링크로 변경
+    };
+});
+
+
+</script>
 
     <hr>
     <h3>교육</h3>
@@ -36,8 +54,7 @@
                         <ul>
                             <li><a href="./templates/원스탭코드.html">JS 활용한 네이버 API 호출 및 출력</a></li>
                             <li><a href="./templates/원스탭.html">프로토타입 개발 및 홍보 자료 작성</a></li>
-                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdoTWd8JKbFUzhIDFV3awxU0VNc8jvNuRLrIIzcQADtPoVmdA/viewform?usp=header">피드백 리서치 자료 수집 중</a></li>
-                        </ul>
+                            <li><a href="" id="feedbackLink">피드백 리서치 자료 수집 중</a></li>                        </ul>
                     </ul>
                 </div>
                 <div class="flex-container">
@@ -80,7 +97,7 @@
                         <ul>
                             <li>Excel을 활용한 R&D사업 공고 통합</li>
                             <li>8개 부처 세부사업 약 250개 정리 </li>
-                            <a href="./images/캘린더.jpg">
+                            <a href="./templates/캘린더.html">
                             <li>캘린더 제작 및 온오프라인 배포</li>
                             </a>
                         </ul>
@@ -150,14 +167,7 @@
     </div>
     </div>
     </ul>
-<br>
-<br>
-<br>
 
-    <div class="footer-left">
-        <span id="phoneNumber" style="display: none;">010-9197-9367</span>
-        <span id="emailAddress" style="display: none;">starpeeker@naver.com</span>
-    </div>
 
 <script>
     // 페이지 로드 시 localStorage에서 열린 상태 복원
@@ -177,33 +187,85 @@
         });
     });
 
-    // 이모티콘에 클릭 이벤트 리스너 추가
-    document.getElementById("phoneIcon").addEventListener("click", function () {
-        const phone = document.getElementById("phoneNumber").textContent.trim();
-        navigator.clipboard.writeText(phone)
+    document.addEventListener("DOMContentLoaded", function () {
+    const phoneNumber = "010-9197-9367"; // 번호를 문자열로 설정
+    const emailaddress = "starpeeker@naver.com"; // 이메일을 문자열로 설정
+    const phoneIcon = document.getElementById("phoneIcon");
+    const emailIcon = document.getElementById("emailIcon");
+    const popup = document.getElementById("popup2");
+    const overlay = document.getElementById("overlay");
+    const popupContent = document.getElementById("popupContent");
+    const copyButton = document.getElementById("copyButton");
+    const closeButton = document.getElementById("closeButton");
+    const messagePopup = document.getElementById("messagePopup"); // 복사 완료 메시지 팝업
+
+    // 전화번호 클릭 시 팝업 열기
+    phoneIcon.addEventListener("click", function () {
+        popupContent.textContent = phoneNumber; // 전화번호를 팝업에 표시
+        popup.style.display = "block";
+        overlay.style.display = "block"; // 오버레이도 표시
+    });
+
+    // 이메일 클릭 시 팝업 열기
+    emailIcon.addEventListener("click", function () {
+        popupContent.textContent = emailaddress; // 이메일을 팝업에 표시
+        popup.style.display = "block";
+        overlay.style.display = "block"; // 오버레이도 표시
+    });
+
+    // "복사" 버튼 클릭 시 내용 복사
+    copyButton.addEventListener("click", function () {
+        const contentToCopy = popupContent.textContent; // 팝업에 표시된 내용을 가져옴
+        navigator.clipboard.writeText(contentToCopy)
             .then(() => {
-                alert(`${phone} 복사 완료`);
+                // 복사 완료 메시지를 팝업에서 표시
+                // messagePopup.textContent = `${contentToCopy} 복사 완료`;
+                messagePopup.innerHTML = `제 연락처가 복사되었습니다.<br>감사합니다:)`;
+                messagePopup.style.textAlign = 'center'; // 텍스트를 가운데 정렬
+                messagePopup.style.display = "block"; // 메시지 팝업 표시
+
+                // 3초 후 복사 완료 메시지 팝업 숨기기
+                setTimeout(() => {
+                    messagePopup.style.display = "none";
+                }, 3000);
+
+                popup.style.display = "none";
+                overlay.style.display = "none"; // 팝업과 오버레이 닫기
             })
             .catch(err => {
-                alert("복사에 실패했습니다.");
-                console.error(err);
+                console.error("복사에 실패했습니다.", err);
             });
     });
 
-    document.getElementById("emailIcon").addEventListener("click", function () {
-        const email = document.getElementById("emailAddress").textContent.trim();
-        navigator.clipboard.writeText(email)
-            .then(() => {
-                alert(`${email} 복사 완료 `);
-            })
-            .catch(err => {
-                alert("복사에 실패했습니다.");
-                console.error(err);
-            });
+    // "닫기" 버튼 클릭 시 팝업 닫기
+    closeButton.addEventListener("click", function () {
+        popup.style.display = "none";
+        overlay.style.display = "none"; // 팝업과 오버레이 닫기
     });
+});
+
+
+
+
+
+
+    
 </script>
+<!-- 팝업과 오버레이 -->
+<div class="overlay" id="overlay" style="display: none;"></div>
+<div class="popup" id="popup2" style="text-align: center; display: none;">
+    <p id="popupContent"></p> <!-- 전화번호가 여기에 표시됩니다 -->
+    <button id="copyButton">복사</button>
+    <button id="closeButton">확인</button>
+</div>
+<!-- 복사 완료 메시지 팝업 -->
+<div class="popup" id="messagePopup" ">
+    <!-- 복사 완료 메시지가 여기에 표시됩니다 -->
+</div>
+
 
 <style>
+
     #phoneIcon, #emailIcon {
         cursor: pointer; /* 마우스 커서 모양 변경 */
     }
@@ -244,6 +306,19 @@
         }
     }
 </style>
+
+
+
+<!-- 팝업과 오버레이 -->
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup" style="text-align: center;">
+    <p>리서치 페이지로 이동할까요?</p>
+    <button id="confirmNo">아니오</button>
+    <button id="confirmYes1">예</button>
+</div>
+
+<script src="./js/content.js"></script>
+
 
 </body>
 </html>
