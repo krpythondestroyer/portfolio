@@ -13,15 +13,12 @@
             <span id="phoneIcon">☎︎</span> 
             <span id="emailIcon">✉︎</span>
         </h2>
-        <!-- <div class="footer-right">
-            <img src="./images/QR.jpg" alt="QR Code" style="width: 55px;">
-        </div> -->
     </div>
     <hr>
     <h3>교육</h3>
     <ul>
         <li>
-            <details>
+            <details id="education-details">
                 <summary class="no-triangle">동아일보 미디어 프론티어 부트 캠프 (24.05 ~ 24.11)▾</summary>
                 <div class="flex-container">
                 <div class="flex-container">
@@ -48,52 +45,10 @@
         </li>
     </ul>
     <hr>
-    <style>
-/* Flexbox를 활용한 수평 배치 */
-.flex-container {
-    display: flex;               /* Flexbox 활성화 */
-    gap: 20px;                   /* 항목 간의 간격 */
-    flex-direction: row;         /* 기본적으로 항목을 좌우로 배치 */
-}
-
-.flex-container > div {
-    flex-basis: 50%;             /* 각 div가 50% 너비를 차지하도록 설정 */
-    margin: 0;                   /* 기본 margin 제거 */
-    padding: 0;                  /* 기본 padding 제거 */
-}
-
-summary {
-    cursor: pointer;            /* summary 클릭 가능 표시 */
-}
-
-/* 화면 너비가 768px 이하일 때 세로 배치로 변경 */
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column; /* 세로 배치로 변경 */
-    }
-
-    .flex-container > div {
-        flex-basis: 100%;       /* 모바일에서는 각 div가 100% 너비를 차지하도록 설정 */
-    }
-    @media print {
-    .flex-container {
-        display: flex;
-        flex-direction: row;
-    }
-}
-}
-
-
-
-
-
-
-    </style>
-
     <h3>경력</h3>
     <ul>
         <li>
-            <details>
+            <details id="career-details">
                 <summary class="no-triangle">
                     서울테크노파크 전략기획팀 인턴 (23.10 ~ 24.04) ▾
                 </summary>
@@ -128,7 +83,7 @@ summary {
     <h3>학력</h3>
     <ul>
         <li>
-            <details>
+            <details id="education2-details">
                 <summary class="no-triangle">
                     홍익대학교 경제학부 학사 (14.03 ~ 23.02) ▾
                 </summary>
@@ -150,7 +105,7 @@ summary {
         </li>
     </ul>
     <hr>
-    <details>
+    <details id="other-details">
         <summary class="no-triangle">
     <h3>기타 ▾</h3>
 </summary>
@@ -185,18 +140,29 @@ summary {
 <br>
 <br>
 
-
-
-
-
-
     <div class="footer-left">
         <span id="phoneNumber" style="display: none;">010-9197-9367</span>
         <span id="emailAddress" style="display: none;">starpeeker@naver.com</span>
     </div>
 
-
 <script>
+    // 페이지 로드 시 localStorage에서 열린 상태 복원
+    document.addEventListener("DOMContentLoaded", function () {
+        const detailsElements = document.querySelectorAll("details");
+        detailsElements.forEach(details => {
+            const detailsId = details.id;
+            const isOpen = localStorage.getItem(detailsId) === "true";
+            details.open = isOpen;
+        });
+    });
+
+    // <details> 요소의 상태를 localStorage에 저장
+    document.querySelectorAll("details").forEach(details => {
+        details.addEventListener("toggle", function () {
+            localStorage.setItem(details.id, details.open);
+        });
+    });
+
     // 이모티콘에 클릭 이벤트 리스너 추가
     document.getElementById("phoneIcon").addEventListener("click", function () {
         const phone = document.getElementById("phoneNumber").textContent.trim();
@@ -226,6 +192,42 @@ summary {
 <style>
     #phoneIcon, #emailIcon {
         cursor: pointer; /* 마우스 커서 모양 변경 */
+    }
+
+    /* Flexbox를 활용한 수평 배치 */
+    .flex-container {
+        display: flex;               /* Flexbox 활성화 */
+        gap: 20px;                   /* 항목 간의 간격 */
+        flex-direction: row;         /* 기본적으로 항목을 좌우로 배치 */
+    }
+
+    .flex-container > div {
+        flex-basis: 50%;             /* 각 div가 50% 너비를 차지하도록 설정 */
+        margin: 0;                   /* 기본 margin 제거 */
+        padding: 0;                  /* 기본 padding 제거 */
+    }
+
+    summary {
+        cursor: pointer;            /* summary 클릭 가능 표시 */
+    }
+
+    /* 화면 너비가 768px 이하일 때 세로 배치로 변경 */
+    @media (max-width: 768px) {
+        .flex-container {
+            flex-direction: column; /* 세로 배치로 변경 */
+        }
+
+        .flex-container > div {
+            flex-basis: 100%;       /* 모바일에서는 각 div가 100% 너비를 차지하도록 설정 */
+        }
+    }
+
+    /* print 스타일 */
+    @media print {
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
     }
 </style>
 
