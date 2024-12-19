@@ -1,9 +1,9 @@
 
 body {
     margin: 10px auto;
-    max-width: 650px;
+    max-width: 900px;
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 20px;
     color: #000000;
     padding: 0 10px;
     background-color: #ffffff;
@@ -168,7 +168,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%; /* 화면 전체 너비에 맞춤 */
-    max-width: 650px;
+    max-width: 900px;
     background-color: rgb(255, 255, 255); /* 배경색 */
     color: rgb(0, 0, 0);
     display: flex;
