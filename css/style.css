@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     margin: 10px auto;
-    max-width: 900px; /* Adjusted for flexible width */
+    max-width: 800px; /* Adjusted for flexible width */
     line-height: 1.5;
     font-size: 1rem; /* Using rem for better scaling */
     color: #000000;
@@ -84,31 +84,6 @@ img {
     }
 }
 
-/* Footer styles */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 1000;
-    font-family: 'joseon', sans-serif;
-    border-top: 1.5px solid rgba(0, 0, 0, 0.5);
-    height: auto;
-    line-height: 1.5;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-/* Footer image adjustment */
-.footer-right img {
-    max-width: 60px;
-    height: auto;
-}
 
 /* Bottom padding for body to avoid content overlap with footer */
 body {

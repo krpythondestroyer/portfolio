@@ -9,6 +9,13 @@
 <body>
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <a href="https://krpythondestroyer.github.io/portfolio/"><h2>이후석</h2></a>
+        <h2>
+            <span id="phoneIcon">☎︎</span> 
+            <span id="emailIcon">✉︎</span>
+        </h2>
+        <!-- <div class="footer-right">
+            <img src="./images/QR.jpg" alt="QR Code" style="width: 55px;">
+        </div> -->
     </div>
     <hr>
     <h3>교육</h3>
@@ -178,48 +185,49 @@ summary {
 <br>
 <br>
 
-<footer>
-    <div class="footer-left">
-        <span class="copyable">010-9197-9367</span> | 
-        <span class="copyable">starpeeker@naver.com</span> | 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2GcE_3kBHR5beVBwI2P0mEq3LfkRURghw6-w7ttjuY-oBEA/viewform">VOC</a>
-    </div>
-    <div class="footer-right">
-        <img src="./images/QR.jpg" alt="QR Code" style="width: 55px;">
-    </div>
-</footer>
 
+
+
+
+
+    <div class="footer-left">
+        <span id="phoneNumber" style="display: none;">010-9197-9367</span>
+        <span id="emailAddress" style="display: none;">starpeeker@naver.com</span>
+    </div>
 
 
 <script>
-    // 복사 가능한 요소들에 이벤트 리스너 추가
-    document.querySelectorAll(".copyable").forEach(element => {
-        element.addEventListener("click", function () {
-            const textToCopy = this.textContent.trim();
-            navigator.clipboard.writeText(textToCopy)
-                .then(() => {
-                    alert(`${textToCopy} 복사 완료 :)
-                     `);
-                })
-                .catch(err => {
-                    alert("복사에 실패했습니다.");
-                    console.error(err);
-                });
-        });
+    // 이모티콘에 클릭 이벤트 리스너 추가
+    document.getElementById("phoneIcon").addEventListener("click", function () {
+        const phone = document.getElementById("phoneNumber").textContent.trim();
+        navigator.clipboard.writeText(phone)
+            .then(() => {
+                alert(`${phone} 복사 완료 :)`);
+            })
+            .catch(err => {
+                alert("복사에 실패했습니다.");
+                console.error(err);
+            });
+    });
+
+    document.getElementById("emailIcon").addEventListener("click", function () {
+        const email = document.getElementById("emailAddress").textContent.trim();
+        navigator.clipboard.writeText(email)
+            .then(() => {
+                alert(`${email} 복사 완료 :)`);
+            })
+            .catch(err => {
+                alert("복사에 실패했습니다.");
+                console.error(err);
+            });
     });
 </script>
 
 <style>
-    .copyable {
-        text-decoration: underline;
+    #phoneIcon, #emailIcon {
         cursor: pointer; /* 마우스 커서 모양 변경 */
     }
 </style>
 
-
-    
-    
-    
-        
 </body>
 </html>
