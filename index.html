@@ -68,6 +68,12 @@ summary {
     .flex-container > div {
         flex-basis: 100%;       /* 모바일에서는 각 div가 100% 너비를 차지하도록 설정 */
     }
+    @media print {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+}
 }
 
 
@@ -166,7 +172,6 @@ summary {
         </li>
         </li>
     </div>
-        <hr>
     </div>
     </ul>
 <br>

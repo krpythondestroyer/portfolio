@@ -1,28 +1,37 @@
-
+/* General body styles */
 body {
     margin: 10px auto;
-    max-width: 900px;
+    max-width: 900px; /* Adjusted for flexible width */
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 1rem; /* Using rem for better scaling */
     color: #000000;
     padding: 0 10px;
     background-color: #ffffff;
     font-family: 'joseon';
-    letter-spacing: 0.5;
-    
+    letter-spacing: 0.5px;
+    transform: scale(0.70); /* Scale down by 95% */
+    transform-origin: top; /* Ensure it scales from the top-left corner */
 }
 
-@media (max-width: 768px) {
+/* For larger screens */
+@media (min-width: 769px) {
     body {
-        font-size: 13px; /* 모바일 화면에서 폰트 크기 조정 */
-        letter-spacing: 0.5;
-        line-height: 1.5;
-        
+        font-size: 1rem; /* Keep it consistent on large screens */
+        letter-spacing: 0.5px;
     }
 }
 
+/* For mobile screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        transform: scale(0.85); /* Scale down more on smaller screens */
+    }
+}
 
-
+/* Table styles */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -34,246 +43,124 @@ td {
     vertical-align: middle;
     width: 10%;
     height: 10%;
-    border: white;;
+    border: white;
 }
 
+/* Image styles */
 img {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* 이미지 가운데 정렬을 원할 경우 */
+    margin: 0 auto; /* Center images */
     object-fit: cover;
 }
 
-.highlight-right-border td:nth-child(1) {
-    border-right: 0.5px solid black;
-}
-
-.justify-text {
-    display: inline-block;
-    width: 100%; /* 또는 원하는 고정된 너비 */
-    text-align: justify;
-}
-.justify-text:after {
-    content: "";
-    display: inline-block;
-    width: 100%; /* 빈 공간을 만들어 줌 */
-}
-
-/* 팝업 스타일 */
+/* Popup Styles */
 .popup {
-    display: none; /* 기본적으로 보이지 않음 */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for popups */
     border: 2px solid #333;
     color: white;
     padding: 10px 5px;
-    width: 90%; /* 화면 크기에 맞춰 팝업 너비 조정 */
-    max-height: 90%; /* 화면 크기에 맞춰 최대 높이 조정 */
+    width: 80%; /* Responsive width */
+    max-height: 80%; /* Adjusted for responsiveness */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     text-decoration: none;
     overflow-y: scroll;
-    scrollbar-width: none;
     font-family: 'joseon';
-
 }
 
+/* Mobile popup styles */
 @media (max-width: 480px) {
     .popup {
-        width: 90%; /* 화면 크기에 맞춰 팝업 너비 조정 */
-        max-height: 90%; /* 화면 크기에 맞춰 최대 높이 조정 */
-        font-family: 'joseon';}
+        width: 90%; /* Popup width on smaller screens */
+        max-height: 90%;
+    }
 }
 
-
-@media (max-width: 760px) {
-    .popup {
-        width: 90%; /* 화면 크기에 맞춰 팝업 너비 조정 */
-        max-height: 90%; /* 화면 크기에 맞춰 최대 높이 조정 */
-        font-family: 'joseon';    }
-}
-
-/* 팝업을 가리기 위한 배경 스타일 */
-.popup-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* 반투명한 어두운 배경 */
+/* Footer styles */
+footer {
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    display: none;
-    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    font-family: 'joseon', sans-serif;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.5);
+    height: auto;
+    line-height: 1.5;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.close-btn {
+/* Footer image adjustment */
+.footer-right img {
+    max-width: 60px;
+    height: auto;
+}
+
+/* Bottom padding for body to avoid content overlap with footer */
+body {
+    padding-bottom: 30px;
+}
+
+/* Link styles */
+a {
+    color: rgb(0, 0, 0);
+    text-decoration-thickness: 0.7px;
+    text-underline-offset: 5px;
+    padding-bottom: 1px;
     display: inline-block;
+}
+
+/* HR styles */
+hr {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
     margin-top: 10px;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    text-align: center;
-    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-
-/* <style>
-기본 스타일
-details {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-}
-
-summary {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-details[open] {
-    background-color: #f9f9f9;
-}
-</style> */
-
-
+/* Preformatted text styles */
 pre {
-    font-size: 16px; /* 기본 폰트 크기 설정 */
+    font-size: 1rem;
 }
 
-/* 모바일 화면에 대한 미디어 쿼리 */
-@media (max-width: 100%) {
+/* Media query for mobile screens (smaller devices) */
+@media (max-width: 600px) {
     pre {
-        font-size: 14px; /* 모바일 화면에서 폰트 크기 줄이기 */
-        font-family: 'joseon';    }
+        font-size: 0.875rem; /* Reduce font size on smaller screens */
+    }
 }
 
+/* Font-face for Joseon font */
 @font-face {
     font-family: 'joseon';
     src: url('../fonts/ChosunSm.TTF') format('truetype');
 }
 
-
-
-
-
-/* 푸터 */
-
-/* 고정 푸터 스타일 */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%; /* 화면 전체 너비에 맞춤 */
-    max-width: 900px;
-    background-color: rgb(255, 255, 255); /* 배경색 */
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-between; /* 양쪽 정렬 */
-    align-items: center;
-    padding: 0px 20px; /* 내부 여백 추가 */
-    z-index: 1000;
-    font-family: 'joseon', sans-serif;
-    border-top: 1.5px solid rgba(0, 0, 0, 0.5);
-    height: auto; /* 높이를 콘텐츠에 맞게 */
-    line-height: 1.5; /* 텍스트 간격 */
-    overflow: hidden; /* 넘치는 콘텐츠 숨김 */
-    box-sizing: border-box; /* 패딩 포함한 크기 계산 */
-}
-
-.footer-left {
-    flex: 1; /* 왼쪽 영역 확장 */
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-    word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
-}
-
-.footer-right {
-    text-align: right; /* 이미지 오른쪽 정렬 */
-}
-
-.footer-right img {
-    max-width: 60px; /* 이미지 크기 제한 */
-    height: auto;
-}
-
-
-
-
-
-/* 헤더 아래 내용의 상단 여백 추가 */
-body {
-    padding-bottom: 30px; /* 고정 푸터의 높이만큼 여백 추가 */
-}
-
-a{
-    color: rgb(0, 0, 0);
-    text-decoration-thickness: 0.7px;
-    text-underline-offset : 5px;
-    /* text-decoration: none; 밑줄 없애기 */
-    padding-bottom: 1px; /* 아랫부분에 약간의 패딩 추가 (HR과 비슷한 위치를 위해) */
-    display: inline-block; /* 인라인 블록으로 설정하여 마진 조정 가능 */
-}
-
-
-
-
-/* summary::-webkit-details-marker { 
-    display: none;
-}
-summary {
-    list-style-type: none; 
-} */
-
-hr {
-    height: 1.0px; /* 두께 설정 */
-    background-color: white; /* 색상 설정 */
-    border: none; /* 테두리 제거 */
-    margin: 3; /* 마진 제거 (헤더와 일치하도록) */
-    margin-top: 10; /* hr 위쪽 마진을 0으로 설정 */
-    margin-bottom: 10px; /* hr 아래쪽 마진 조정 */
-    background-color: rgba(0, 0, 0, 0.5); /* 색상과 불투명도 설정 */
-}
-
-p {
-    margin-top: 15px; /* 위쪽 마진 */
-    margin-bottom: 15px; /* 아래쪽 마진 */
-    font-family: "Roboto Condensed", sans-serif;
-}
-
-/* .infowindow {
-    padding: 5px;
-    font-size: 14px;
-    color: rgb(249, 25, 25);
-    background-color: rgb(243, 21, 21);
-}
-
-.infowindow img {
-    width: 100%;
-    height: auto;
-} */
-
-
-
+/* Container for flex layout */
 .container {
     display: flex;
-    justify-content: space-between; /* 자식 요소를 양 끝으로 배치 */
-    align-items: center; /* 수직 정렬 */
-    width: 100%; /* 부모 요소 너비를 전체로 설정 */
-  }
-  
-  h3 {
-    margin: 0; /* 기본 여백 제거 */
-  }
-  
-
-
-
-  .no-triangle {
-    list-style-type: none; /* 기본 삼각형 숨기기 */
-    padding-left: 0; /* 여백 없애기 */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-
+/* For summary dropdown */
+.no-triangle {
+    list-style-type: none;
+    padding-left: 0;
+}
