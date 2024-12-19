@@ -27,7 +27,7 @@ body {
         font-size: 0.875rem; /* Adjust font size for smaller screens */
         letter-spacing: 0.5px;
         line-height: 1.5;
-        transform: scale(0.85); /* Scale down more on smaller screens */
+        transform: scale(1); /* Scale down more on smaller screens */
     }
 }
 
