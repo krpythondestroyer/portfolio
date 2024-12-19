@@ -98,12 +98,16 @@ a {
     padding-bottom: 1px;
     display: inline-block;
 }
+@media print {
+    a {
+        text-decoration: none;
+    }
+}
 
 /* HR styles */
 hr {
-    height: 1px;
+    height: 0.5px;
     background-color: rgba(0, 0, 0, 0.5);
-    border: none;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -138,4 +142,8 @@ pre {
 .no-triangle {
     list-style-type: none;
     padding-left: 0;
+}
+
+h3 {
+    margin: 0;
 }
