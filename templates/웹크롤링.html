@@ -7,130 +7,83 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-    <h3><strong>전기차 키워드 기사 데이터 수집 및 분석</strong></h3>
+    <style>
+ul {
+    margin: 0; /* 상하 여백 제거 */
+    padding: 0 10px 0 30px; /* 좌측 20px, 우측 10px */
+}
+
+li {
+    margin: 0; /* 개별 항목 간 여백 제거 */
+    padding: 0px 0; /* 항목 간 적당한 간격 유지 */
+}
+
+    </style>
+    <strong>전기차 키워드 기사 데이터 수집 및 분석</strong>
     <hr />
-    <h3><strong>도입</strong></h3>
-    <ul>
-    <li><strong>배경</strong>
+    <strong>배경 및 목표</strong>
     <ul>
     <li>전기차 시장 성장에 따른 변화 파악 필요</li>
     <li>청라 화재 사건 등 여론 분석 중요성 증대</li>
-    
-    </ul>
-    </li>
-    <li><strong>목표</strong>
-    <ul>
     <li>전기차 기사 워드클라우드 및 감성 분석</li>
-</ul>
-</li>
+
 
 </ul>
 <hr>
-    <h3><strong>방법</strong></h3>
+<strong> 수집 및 전처리</strong>
+
     <ul>
-    <li><strong>수집</strong>
-    <ul>
-    <li><strong>대상</strong>: 전기차 관련 기사 제목 및 언론사</li>
-    
+        <li>포털 다음 "전기차" 검색시 기사 제목 및 언론사</li>
+        <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
+        <li><a href="../images/웹크롤링.png">BeautifulSoup을 활용한 웹 크롤링</a></li>
+        <li><a href="../images/형태소분석.png">kiwipiepy를 활용한 자연어 분석, 유저 단어 구축</a></li>
     </ul>
+
+<hr>
+<strong>분석 및 시각화</strong>
     <ul>
-    <li><strong>기간</strong>: 2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
-    
+        <li>pandas를 활용한 상관 관계, 빈도 분석</li>
+        <li>wordcloud, matplotlib을 활용한 데이터 시각화 (워드클라우드, 막대그래프)</li>
+        <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 감성 분석</a></li>
     </ul>
+<hr>
+<strong>결과</strong>
+
+
     <ul>
-    <li><strong>방법</strong>: <a href="../images/웹크롤링.png">BeautifulSoup을 활용한 웹 크롤링</a></li>
-    
+        <li><a href="../images/워드클라우드.png">&quot;보조금&quot;, &quot;테슬라&quot; 등 단어는 매년 고빈도</a></li>
+        <li><a href="../images/감성분석결과.png">2022년 이후 긍정 기사가 부정 기사 역전</a></li>
+        <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
     </ul>
-    </li>
-    
-    </ul>
-    <ul>
-    <li><strong>전처리</strong>
-    <ul>
-    <li><a href="../images/형태소분석.png">kiwipiepy를 활용한 한국어 형태소 분석 및 사용자 사전 구축</a></li>
-    
-    </ul>
-    </li>
-    <li><strong>분석</strong>
-    <ul>
-    <li>pandas를 활용한 상관 관계, 빈도 분석</li>
-    
+
+
     </ul>
     </li>
-    
-    </ul>
-    <ul>
-    <li><strong>시각화</strong>
-    <ul>
-    <li>wordcloud, matplotlib을 활용한 데이터 시각화 (워드클라우드, 막대그래프)</li>
-    
+
     </ul>
     </li>
-    <li><strong>감성 분석</strong>
-    <ul>
-    <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 감성 분석</a></li>
+
+
     
     </ul>
     </li>
     
     </ul>
     <hr />
-    <h3><strong>결과</strong></h3>
-    <ul>
-    <li><strong>워드클라우드</strong>
-    <ul>
-    <li> <a href="../images/워드클라우드.png">&quot;보조금&quot;, &quot;배터리&quot;, &quot;테슬라&quot;등의 단어는 매년 고빈도 키워드</a></li>
-    <li>2024년의 경우 기사 정렬 이슈로 데이터가 튀었던 것으로 보임</li>
+    <strong>업무</strong>
+
+   <ul>
+    <li> 기간 : 2024.08.12 ~ 2024.08.24 (2주)</li>
+    <li> 인원 : 동아일보 미디어 프론티어 과정 3인</li>
+    <li> 협업 : Slack, Notion </li>
+    <li> 개인 기여: 2024년 기사데이터 수집 및 핸들</li>
     
-    </ul>
-    </li>
-    <li><strong>감성 분석</strong>
-    <ul>
-    <li><a href="../images/감성분석결과.png">2022년 이후 긍정 기사가 부정 기사 역전</a>
-    </li>
-    <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
-    
-    </ul>
+
     </li>
     
+
     </ul>
-    <hr />
-    <h3><strong>발전</strong></h3>
-    <ul>
-    <li><strong>분석 수준 세분화</strong>
-    <ul>
-    <li>언론사별 카테고리 세분화</li>
-    
-    </ul>
-    </li>
-    <li><strong>사용자 사전 강화</strong>
-    <ul>
-    <li>전기차 관련 전문용어 및 신규 단어 반영</li>
-    
-    </ul>
-    </li>
-    
-    </ul>
-    <hr />
-    <h3><strong>업무</strong></h3>
-    <ul>
-    <li><strong>개요</strong>
-    <ul>
-    <li><strong>기간</strong>: 2024.08.12 ~ 2024.08.24 (2주)</li>
-    
-    </ul>
-    <ul>
-    <li><strong>인원</strong>: 동아일보 미디어 프론티어 과정 3인</li>
-    <li><strong>협업</strong>: Slack, Notion </li>
-    <li><strong>기여</strong>: 2024년 기사데이터 수집 및 핸들</li>
-    
-    
-    
-    </ul>
-    </li>
-    
-    </ul>
-    <hr />
+    <hr>
 
 
       
