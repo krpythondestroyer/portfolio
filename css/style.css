@@ -262,12 +262,35 @@ h3 {
         }
         
 
-ul {
-    margin: 0; /* 상하 여백 제거 */
-    padding: 0 10px 0 30px; /* 좌측 20px, 우측 10px */
-}
-
-li {
-    margin: 0; /* 개별 항목 간 여백 제거 */
-    padding: 0px 0; /* 항목 간 적당한 간격 유지 */
-}
+        ul {
+            margin: 0; /* 상하 여백 제거 */
+            padding: 0 10px 0 30px; /* 좌측 20px, 우측 10px */
+        }
+        
+        li {
+            margin: 0; /* 개별 항목 간 여백 제거 */
+            padding: 0px 0; /* 항목 간 적당한 간격 유지 */
+        }
+        
+        @media (max-width: 768px) { /* 화면 너비 768px 이하 */
+            ul {
+                padding: 0 10px; /* 좌우 여백을 동일하게 조정 */
+            }
+        
+            li {
+                font-size: 14px; /* 글꼴 크기를 모바일에 맞게 축소 */
+                line-height: 1.5; /* 줄 간격 조정으로 가독성 향상 */
+            }
+        
+            .flex-container {
+                flex-direction: column; /* 모바일에서 열 방향으로 정렬 */
+                gap: 10px; /* 각 요소 간격 추가 */
+            }
+        
+            a {
+                font-size: 14px; /* 링크 글꼴 크기 조정 */
+                word-break: break-word; /* 긴 링크 자동 줄바꿈 */
+                display: block; /* 링크를 블록으로 만들어 전체 공간 차지 */
+            }
+        } 
+        
