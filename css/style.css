@@ -290,7 +290,7 @@ h3 {
             a {
                 font-size: 14px; /* 링크 글꼴 크기 조정 */
                 word-break: break-word; /* 긴 링크 자동 줄바꿈 */
-                display: block; /* 링크를 블록으로 만들어 전체 공간 차지 */
+
             }
         } 
         

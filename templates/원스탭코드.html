@@ -10,17 +10,80 @@
 <body>
     <h3>프로토타입 개발</h3> 
     <hr>
-    <strong>편집 이미지</strong>
+    <strong>전체 화면 설명 </strong>
     <a href="../images/원스탭 박스.png"><img src="../images/원스탭 박스.png" alt=""></a>
     <hr>
-    <strong>기본 이미지</strong>
+    <strong>인터페이스 칸 </strong>
     <hr>
-    <a href="../images/원스탭.png"><img src="../images/원스탭.png" alt=""></a>
-    <a href="../images/인터페이스2.png"><img src="../images/인터페이스2.png" alt=""></a>
-    <a href="../images/디지털트윈2.png"><img src="../images/디지털트윈2.png" alt=""></a>
-    <a href="../images/디지털트윈.png"><img src="../images/디지털트윈.png" alt=""></a>
-    <a href="../images/디지털트윈백과사전.png"><img src="../images/디지털트윈백과사전.png" alt=""></a>
-    <a href="../images/동아일보.png"><img src="../images/동아일보.png" alt=""></a>
+    <img src="../images/image.png" alt="">
+    <figure class='table-figure'>
+        <table>
+            <thead>
+                <tr>
+                    <th>라벨</th>
+                    <th>기능</th>
+                    <th>사용 예시</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>검색 단어</td>
+                    <td>사용자가 검색 단어</td>
+                    <td>디지털 트윈</td>
+                </tr>
+                <tr>
+                    <td>설명 요약</td>
+                    <td>네이버 백과사전 API 호출 결과 중 description 값 출력</td>
+                    <td>어떤 사물을 컴퓨터 시스템상에 동일하게 표현해서 가상 모델을 만드는 것. 실제와 동일한 3차원 모델을 만들고, 현실 세계와 가상의 디지털 세계를 데이터를 기반으로 연결한다. 현실과 가상이...</td>
+                </tr>
+                <tr>
+                    <td>썸네일</td>
+                    <td>네이버 백과사전 API 호출 결과 중 thumbnail 값 출력</td>
+                    <td><a href="../images/디지털트윈개념.png">디지털 트윈 시각 자료</a></td>
+                </tr>
+                <tr>
+                    <td>📷 카메라</td>
+                    <td>네이버 백과사전 API 호출 결과 중 thumbnail 값 있을 시 호출</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>🖊️ 형광펜</td>
+                    <td>검색 단어 볼드 처리</td>
+                    <td>디지털 트윈</td>
+                </tr>
+                <tr>
+                    <td>🗞️ 지우개</td>
+                    <td>단어 삭제</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>📖 책열기</td>
+                    <td>네이버 백과사전 링크 이동하기</td>
+                    <td><a href="../images/디지털트윈백과사전.png">디지털 트윈 백과사전 페이지 이동</a></td>
+                </tr>
+                <tr>
+                    <td>🔖 책갈피</td>
+                    <td>단어가 검색 및 저장된 사이트 돌아가기</td>
+                    <td><a href="../images/동아일보.png">디지털 트윈 검색된 페이지 이동</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+    
+        <style>
+            .table-figure table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            .table-figure th, .table-figure td {
+                border: 1px solid #ccc; /* 테두리 색상 설정 */
+                padding: 8px; /* 내부 여백 */
+                text-align: left; /* 텍스트 정렬 */
+            }
+            .table-figure th {
+                background-color: #f4f4f4; /* 헤더 배경 색상 */
+            }
+        </style>
     <hr>
     <h3>원스탭  : "한 번에 검색하고, 한 탭에 저장하자"</h3>
     <hr>
@@ -47,9 +110,10 @@
     
     <hr>
 
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoTWd8JKbFUzhIDFV3awxU0VNc8jvNuRLrIIzcQADtPoVmdA/viewform?usp=header">설문조사</a>
-
+    <p style="text-align: center;">
+        <br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoTWd8JKbFUzhIDFV3awxU0VNc8jvNuRLrIIzcQADtPoVmdA/viewform?usp=header">설문조사 참여하기!</a>
+    </p>
     
 </body>
 </html>
