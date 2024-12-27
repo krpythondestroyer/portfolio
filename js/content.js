@@ -54,3 +54,48 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector(".toggle-button");
+    const noteContent = document.querySelector(".note-content");
+    const noteWidget = document.querySelector(".note-widget");
+  
+    // 토글 버튼 클릭 이벤트
+    toggleButton.addEventListener("click", () => {
+      const isVisible = noteContent.style.display === "block";
+      if (isVisible) {
+        noteContent.style.display = "none";
+      } else {
+        // 새로운 내용을 표시
+        const newContent = "웹 페이지 사용 설명서.\n줄바꿈 입니다.";
+        noteContent.querySelector("p").textContent = newContent;
+        noteContent.style.display = "block";
+      }
+    });
+  
+    // 드래그 앤 드롭 구현
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+  
+    noteWidget.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - noteWidget.offsetLeft;
+      offsetY = e.clientY - noteWidget.offsetTop;
+      noteWidget.style.cursor = "grabbing";
+    });
+  
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      noteWidget.style.left = `${e.clientX - offsetX}px`;
+      noteWidget.style.top = `${e.clientY - offsetY}px`;
+    });
+  
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      noteWidget.style.cursor = "grab";
+    });
+  });
+  
+  

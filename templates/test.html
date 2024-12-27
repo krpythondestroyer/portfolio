@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined View</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- 여기에 두 HTML 파일의 내용이 삽입됩니다 -->
+  <div id="content1" class="content"></div>
+  <div id="content2" class="content"></div>
+
+  <script>
+    // 첫 번째 HTML 파일 가져오기
+    fetch('원스탭.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content1').innerHTML = data;
+      });
+
+    // 두 번째 HTML 파일 가져오기
+    fetch('원스탭2.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content2').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
