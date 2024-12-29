@@ -333,8 +333,3 @@ h3 {
   font-size: 14px;
   color: #333;
 }
-
-
-.flex-container {
-    display: flex !important;
-}
