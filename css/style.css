@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     margin: 10px auto;
-    max-width: 800px; /* Adjusted for flexible width */
+    /* max-width: 800px;  */
     line-height: 1.5;
     font-size: 1rem; /* Using rem for better scaling */
     color: #000000;
@@ -9,7 +9,7 @@ body {
     background-color: #ffffff;
     font-family: 'joseon';
     letter-spacing: 0.5px;
-    transform: scale(0.70); /* Scale down by 95% */
+    /* transform: scale(0.70);  */
     transform-origin: top; /* Ensure it scales from the top-left corner */
 }
 
@@ -274,7 +274,7 @@ h3 {
         
         @media (max-width: 768px) { /* 화면 너비 768px 이하 */
             ul {
-                padding: 0 10px; /* 좌우 여백을 동일하게 조정 */
+                padding: 0 15px; /* 좌우 여백을 동일하게 조정 */
             }
         
             li {
@@ -332,4 +332,41 @@ h3 {
   padding: 20px;
   font-size: 14px;
   color: #333;
+}
+
+
+.split-scroll-container {
+    display: flex;
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+.left-section {
+    width: 35%; /* 화면의 40% 폭 */
+    overflow-y: scroll; /* 독립적인 스크롤 */
+    height: 100%;
+}
+
+.right-section {
+    flex: 1; /* 나머지 공간을 차지 */
+    overflow-y: scroll;
+    height: 100%;
+}
+
+/* 모바일에서 위아래 배치, 왼쪽 섹션이 100% 차지 */
+@media (max-width: 768px) {
+    .split-scroll-container {
+        flex-direction: column;
+        height: auto; /* 높이 제한 제거 */
+    }
+
+    .left-section {
+        width: 100%; /* 모바일에서 왼쪽 섹션을 100% 차지 */
+    }
+
+    .right-section {
+        width: 100%; /* 오른쪽 섹션을 100% 차지하도록 설정 */
+    }
+
+    ul {
+
 }
