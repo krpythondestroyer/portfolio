@@ -341,16 +341,78 @@ h3 {
 }
 
 .left-section {
-    width: 35%; /* 화면의 40% 폭 */
-    overflow-y: scroll; /* 독립적인 스크롤 */
-    height: 100%;
+    width: 40%; /* 화면의 35% 폭 */
+    max-width: 800px;
+    overflow: auto; /* 스크롤 가능 */
+    height: 100%; /* 높이 설정 */
+    scrollbar-width: none; /* Firefox에서 스크롤 바 숨기기 */
+    -ms-overflow-style: none; /* Internet Explorer에서 스크롤 바 숨기기 */
+}
+
+.left-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge에서 스크롤 바 숨기기 */
 }
 
 .right-section {
     flex: 1; /* 나머지 공간을 차지 */
-    overflow-y: scroll;
-    height: 100%;
+    overflow: auto; /* 스크롤 가능 */
+    height: 100%; /* 높이 설정 */
+    scrollbar-width: none; /* Firefox에서 스크롤 바 숨기기 */
+    -ms-overflow-style: none; /* Internet Explorer에서 스크롤 바 숨기기 */
 }
+
+.right-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge에서 스크롤 바 숨기기 */
+}
+
+
+
+/* 이미지 스타일 */
+.centered-figure {
+    text-align: center; /* 이미지와 캡션을 가운데 정렬 */
+    margin: 20px 0; /* 이미지와 캡션 간격 추가 */
+}
+
+.centered-figure img {
+    max-width: 100%; /* 이미지 크기를 90%로 제한 (원하는 크기로 조절) */
+    height: auto;    /* 이미지 비율 유지 */
+    margin-bottom: 10px; /* 이미지와 캡션 사이 여백 */
+}
+
+.centered-figure figcaption {
+    font-size: 1rem; /* 캡션 텍스트 크기 */
+    color: #555;     /* 캡션 색상 */
+    text-align: center; /* 캡션 텍스트 정렬 */
+    display: block;   /* 캡션을 블록 요소로 설정하여 이미지 아래에 위치시킴 */
+}
+
+
+
+/* 상위 flex-container 설정 */
+section.flex-container {
+    display: flex;
+    justify-content: space-between; /* 좌우 공간 분배 */
+
+}
+
+/* 각 flex-item 스타일 */
+section.flex-container > div {
+    flex: 1; /* 각 div가 동일 비율로 공간 차지 */
+    display: flex;
+    flex-direction: column; /* 리스트 항목이 세로로 배치되도록 설정 */
+}
+
+/* 모바일 대응: 768px 이하에서 flex 방향을 세로로 전환 */
+@media (max-width: 768px) {
+    section.flex-container {
+
+    }
+
+    section.flex-container > div {
+        width: 100%; /* 각 div가 100% 폭을 차지하도록 설정 */
+    }
+}
+
 
 /* 모바일에서 위아래 배치, 왼쪽 섹션이 100% 차지 */
 @media (max-width: 768px) {
@@ -366,7 +428,3 @@ h3 {
     .right-section {
         width: 100%; /* 오른쪽 섹션을 100% 차지하도록 설정 */
     }
-
-    ul {
-
-}

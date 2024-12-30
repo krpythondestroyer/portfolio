@@ -16,89 +16,64 @@
       <li>전기차 시장 성장에 따른 변화 파악 필요</li>
       <li>청라 화재 사건 등 여론 분석 중요성 증대</li>
       <li>전기차 기사 워드클라우드 및 감성 분석</li>
-  
-  
-  </ul>
-  <hr>
-  <strong> 수집 및 전처리</strong>
-  
+      </ul>
+      <hr>
+      <strong>수집 및 전처리</strong>
       <ul>
           <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사</li>
           <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
-          <ul>
-              <li>2024년의 경우 7월 31일까지로 기간 필터링  </li>
-          </ul>
-          <li>BeautifulSoup을 활용한 웹 크롤링<sup>1</sup></li>
-          <li>kiwipiepy를 활용한 자연어 분석, 유저 단어 구축<sup>2</sup></li>
+
+          <li>BeautifulSoup을 활용한 웹 크롤링</li>
+          <li>kiwipiepy를 활용한 자연어 분석, 유저 단어 구축</li>
       </ul>
-  
-  <hr>
-  <strong>분석 및 시각화</strong>
+      <hr>
+      <strong>분석 및 시각화</strong>
       <ul>
           <li>pandas를 활용한 상관 관계, 빈도 분석</li>
           <li>wordcloud, matplotlib을 활용한 데이터 시각화 (워드클라우드, 막대그래프)</li>
-          <li>OpenAI API를 활용한 긍정/부정/중립 감성 분석<sup>3</sup></li>
+          <li>OpenAI API를 활용한 긍정/부정/중립 감성 분석</li>
       </ul>
-  <hr>
-  <strong>결과</strong>
-  
-  
+      <hr>
+      <strong>결과</strong>
       <ul>
-          <li>&quot;보조금&quot;, &quot;테슬라&quot; 등 단어는 매년 고빈도<sup>4</sup></li>
-          <li>2022년 이후 긍정 기사가 부정 기사 역전<sup>5</sup></li>
+          <li>"보조금", "테슬라" 등 단어는 매년 고빈도</li>
+          <li>2022년 이후 긍정 기사가 부정 기사 역전</li>
           <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
-      </ul>
-  
-  
-      </ul>
-      </li>
-  
-      </ul>
-      </li>
-  
-  
-      
-      </ul>
-      </li>
-      
       </ul>
       <hr />
       <strong>업무</strong>
-  
-     <ul>
-      <li> 기간 : 2024.08.12 ~ 2024.08.24 (2주)</li>
-      <li> 인원 : 동아일보 미디어 프론티어 과정 3인</li>
-      <li> 협업 : Slack, Notion </li>
+      <ul>
+      <li>기간 : 2024.08.12 ~ 2024.08.24 (2주)</li>
+      <li>인원 : 동아일보 미디어 프론티어 과정 3인</li>
+      <li>협업 : Slack, Notion</li>
       <li>기여도: 33% (2024년 기사데이터 수집 및 핸들)</li>
-      
-  
-      </li>
-      
-  
       </ul>
       <hr>
-  
-  
-        
     </div>
     <div class="right-section">
-
-      BeautifulSoup을 활용한 웹 크롤링<sup>1</sup>
+      <strong>수집 및 전처리</strong>
       <hr>
+
+      BeautifulSoup을 활용한 웹 크롤링
+<hr>  
+
       <a href="../images/웹크롤링.png"><img src="../images/웹크롤링.png" alt="">    </a>
-      kiwipiepy를 활용한 자연어 분석, 유저 단어 구축 <sup>2</sup>
+      kiwipiepy를 활용한 자연어 분석, 유저 단어 구축
       <hr>
       <a href="../images/형태소분석.png"><img src="../images/형태소분석.png" alt="">    </a>
-      OpenAI API를 활용한 긍정/부정/중립 감성 분석<sup>3</sup>
+      <strong>분석 및 시각화</strong>
+      <hr>
+      OpenAI API를 활용한 긍정/부정/중립 감성 분석
+      <hr>
       <a href="../images/감성분석.png"><img src="../images/감성분석.png" alt="">    </a>
       <hr>
-      &quot;보조금&quot;, &quot;테슬라&quot; 등 단어는 매년 고빈도<sup>4</sup>
-      <a href="../images/워드클라우드.png"><img src="../images/워드클라우드.png" alt="">    </a>
+      <strong>결과</strong>
       <hr>
-      2022년 이후 긍정 기사가 부정 기사 역전<sup>5</sup>
+      "보조금", "테슬라" 등 단어는 매년 고빈도
+      <hr><a href="../images/워드클라우드.png"><img src="../images/워드클라우드.png" alt="">    </a>
+      2022년 이후 긍정 기사가 부정 기사 역전
+      <hr>
       <a href="../images/감성분석결과.png"><img src="../images/감성분석결과.png" alt="">    </a>
-  
-      
     </div>
 </div>
 </body>
