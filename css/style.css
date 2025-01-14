@@ -9,9 +9,11 @@ body {
     background-color: #ffffff;
     font-family: 'joseon';
     letter-spacing: 0.5px;
+    max-width: 800px; 
     /* transform: scale(0.70);  */
     transform-origin: top; /* Ensure it scales from the top-left corner */
 }
+
 
 /* For larger screens */
 @media (min-width: 769px) {
