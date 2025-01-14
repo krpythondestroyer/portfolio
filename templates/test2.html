@@ -6,9 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Combined View</title>
-  <div class="split-scroll-container">
-    <div class="left-section">
-
       <h3>웹 크롤링 및 분석</h3>
       <hr />
       <strong>배경 및 목표</strong>
@@ -23,21 +20,30 @@
           <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사</li>
           <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
 
-          <li>BeautifulSoup을 활용한 웹 크롤링</li>
-          <li>Kiwipiepy를 활용한 자연어 분석, 유저 단어 구축</li>
+          <li><a href="../images/웹크롤링.png">BeautifulSoup을 활용한 웹 크롤링</a></li>
+          <li><a href="../images/형태소분석.png">Kiwipiepy를 활용한 자연어 분석, 유저 단어 구축</a></li>
+          <ul>
+            <li>KoNLPy → Kiwipiepy</li>
+            <li>최신성 ↑  간편성 ↑</li>
+            <li>최소 소거 : 기사 콘텐츠 ( 표준성, 통일성 ↑) </li>
+            <li>분리: "전기차" ↛  "전기" "차" | replace 공란 처리</li>
+          </ul>
       </ul>
       <hr>
       <strong>분석 및 시각화</strong>
       <ul>
           <li>Pandas를 활용한 연관, 고빈도 단어분석</li>
           <li>Wordcloud, Matplotlib을 활용한 데이터 시각화 (워드클라우드, 막대그래프)</li>
-          <li>OpenAI API를 활용한 긍정/부정/중립 감성 분석</li>
+          <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 감성 분석</a></li>
+          <ul>
+            <li><a href="../images/감성분석ML.png">ML</a> → <a href="../images/감성분석AI.png">LLM</a> </li>
+          </ul>
       </ul>
       <hr>
       <strong>결과</strong>
       <ul>
-          <li>"보조금", "테슬라" 등 단어는 매년 고빈도</li>
-          <li>2022년 이후 긍정 기사가 부정 기사 역전</li>
+          <li><a href="../images/워드클라우드.png">"보조금", "테슬라" 등 단어는 매년 고빈도</a> </li>
+          <li><a href="../images/감성분석결과.png">2022년 이후 긍정 기사가 부정 기사 역전</a></li>
           <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
       </ul>
       <hr />
@@ -49,43 +55,7 @@
       <li>기여도: 33% (2024년 기사데이터 수집 및 핸들)</li>
       </ul>
       <hr>
-    </div>
-    <div class="right-section">
-      <strong>수집 및 전처리</strong>
-      <hr>
-
-      BeautifulSoup을 활용한 웹 크롤링
-<hr>  
-
-      <a href="../images/웹크롤링.png"><img src="../images/웹크롤링.png" alt="">    </a>
-      kiwipiepy를 활용한 자연어 분석, 유저 단어 구축
-      <hr>
-      <a href="../images/형태소분석.png"><img src="../images/형태소분석.png" alt="">    </a>
-      <ul>
-        <li>KoNLPy → Kiwipiepy</li>
-        <li>최신성 ↑  간편성 ↑</li>
-        <li>최소 소거 : 기사 콘텐츠 ( 표준성, 통일성 ↑) </li>
-        <li>분리: "전기차" ↛  "전기" "차" | replace 공란 처리</li>
-      </ul>
-      <strong>분석 및 시각화</strong>
-      <hr>
-      *OpenAI API를 활용한 긍정/부정/중립 감성 분석
-      <hr>
-      <a href="../images/감성분석.png"><img src="../images/감성분석.png" alt="">    </a>
-      <hr>
-      <strong>결과</strong>
-      <hr>
-      "보조금", "테슬라" 등 단어는 매년 고빈도
-      <hr><a href="../images/워드클라우드.png"><img src="../images/워드클라우드.png" alt="">    </a>
-      2022년 이후 긍정 기사가 부정 기사 역전
-      <hr>
-      <a href="../images/감성분석결과.png"><img src="../images/감성분석결과.png" alt="">    </a>
-    <hr>
-    <strong>참고</strong>
-    <hr>
-    *
-    <img src="../images/감성분석AI.png" alt="">
-    <img src="../images/감성분석ML.png" alt="">
+ 
 
 <!-- <h3>후석 일지</h3>
 <hr>
@@ -143,7 +113,11 @@
 <br><li>그럼에도 불구하고, 코딩과 컴퓨팅 기술에 대해 새로운 시각을 가지게 된 계기가 있었다. 코딩과 컴퓨팅의 궁극적인 목적이 인간의 편리성 증대 및 작업 효율화라고 생각해왔지만, 이번에는 활용 윤리와 가이드라인에 대해 고민해보았다. 특히 크롤링 행위에 대해 생각해보았다. 우리는 정적 크롤링을 통해 효율적으로 과제를 진행했지만, 이는 비상업적 학습 용도로 공개된 데이터를 소량 가져오는 것이어서 용납 가능한 방법이었던 것 같다. 만약 상업적이고 지속적이며 대규모적인 크롤링이었다면 상대방이 공격받는다고 느낄 수도 있었을 것이다. 이 경우 법적 및 상업적인 배상과 책임 문제로 이어질수도 있어보였다. 컴퓨팅의 효율성도 좋지만 그 방식에 대한 기준도 앞으로 생각해볼 필요가 있어보였다.</li>
 </ul> -->
 
-    </div>
-</div>
+<style>
+  body {
+          max-width: 800px; 
+  }
+</style>
+
 </body>
 </html>
