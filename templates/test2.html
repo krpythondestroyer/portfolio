@@ -8,54 +8,115 @@
   <title>Combined View</title>
       <h3>웹 크롤링 및 분석</h3>
       <hr />
-      <strong>배경 및 목표</strong>
-      <ul>
-      <li>전기차 시장 성장에 따른 변화 파악 필요</li>
-      <li>청라 화재 사건 등 여론 분석 중요성 증대</li>
-      <li>전기차 기사 워드클라우드 및 감성 분석</li>
-      </ul>
-      <hr>
-      <strong>수집 및 전처리</strong>
-      <ul>
-          <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사</li>
-          <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
+      <section class="flex-container">
+        <div class="flex-container">
+          <strong>배경 및 목표</strong>
+          <ul>
+          <li>전기차 시장 성장에 따른 변화 파악 필요</li>
+          <li>청라 화재 사건 등 여론 분석 중요성 증대</li>
+          <li>전기차 기사 워드클라우드 및 감성 분석</li>
+          </ul>
+  </div>
+  <div class="flex-container">
+    <strong>업무</strong>
+    <ul>
+    <li>기간 : 2024.08.12 ~ 2024.08.24 (2주)</li>
+    <li>인원 : 동아일보 미디어 프론티어 과정 3인</li>
+    <li>협업 : Slack, Notion</li>
+    <li>기여도: 33% (2024년 기사데이터 수집 및 핸들)</li>
+    </ul>
 
+  </div>
+
+</section>
+      <hr>
+      <strong>수집 및 분석</strong>
+      <section class="flex-container">
+        <div class="flex-container">
+      <ul>
           <li><a href="../images/웹크롤링.png">BeautifulSoup을 활용한 웹 크롤링</a></li>
+          <ul>
+            <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사</li>
+            <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
+          </ul>
+        </div>
+        <div class="flex-container">
+          <ul>
           <li><a href="../images/형태소분석.png">Kiwipiepy를 활용한 자연어 분석, 유저 단어 구축</a></li>
           <ul>
             <li>KoNLPy → Kiwipiepy</li>
             <li>최신성 ↑  간편성 ↑</li>
-            <li>최소 소거 : 기사 콘텐츠 ( 표준성, 통일성 ↑) </li>
-            <li>분리: "전기차" ↛  "전기" "차" | replace 공란 처리</li>
+            <li>최소 소거 : 기사 콘텐츠 (표준성, 통일성 ↑) </li>
+            <li>분리: "전기차" ↛  "전기" "차", replace 공란 처리</li>
           </ul>
+        </ul>
       </ul>
-      <hr>
-      <strong>분석 및 시각화</strong>
+    </div>
+
+  </section>
+  <section class="flex-container">
+    <div class="flex-container">
       <ul>
           <li>Pandas를 활용한 연관, 고빈도 단어분석</li>
-          <li>Wordcloud, Matplotlib을 활용한 데이터 시각화 (워드클라우드, 막대그래프)</li>
-          <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 감성 분석</a></li>
           <ul>
+            <li>형태소 분석 - 말뭉치 생성 - 문서 단어 행렬화</li>
+            <li>고빈도,저빈도 단어 상위 10개 출력 </li>
+          </ul>
+
+
+      </ul>
+    </div>
+    <div class="flex-container">
+<ul>
+      <li>Matplotlib, Wordcloud를 활용한 데이터 시각화</li>
+      <ul>
+        <li>막대 그래프</li>
+        <li>워드 클라우드</li>
+      </ul>
+    </ul>
+    </div>
+
+  </section>
+  <hr />
+  <section class="flex-container">
+    <div class="flex-container">
+      <strong>감성 분석</strong>
+      <ul>
+                <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 감성 분석</a></li>
+          <ul>
+            <li>모델: gpt-4o-mini</li>
+            <li>역할: 감성분석 챗봇, 긍정, 부정 중립 표시 </li>
             <li><a href="../images/감성분석ML.png">ML</a> → <a href="../images/감성분석AI.png">LLM</a> </li>
           </ul>
-      </ul>
-      <hr>
-      <strong>결과</strong>
+        </ul>
+    </div>
+    <div class="flex-container">
+            <strong>결과</strong>
       <ul>
-          <li><a href="../images/워드클라우드.png">"보조금", "테슬라" 등 단어는 매년 고빈도</a> </li>
-          <li><a href="../images/감성분석결과.png">2022년 이후 긍정 기사가 부정 기사 역전</a></li>
-          <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
+
+   
+          <li><a href="../images/워드클라우드.png">20~23년 "보조금", "배터리" 등이 매년 고빈도 단어</a></li>
+          <ul>
+            <li>24년은 "현대차”와 "기아"차가 고빈도</li>
+            <ul><li>포털사 기사 정렬 이슈로 보임</li>
+            </ul>
+          </ul>
+   
+          <li><a href="../images/감성분석결과.png">2022년 이후 긍정 기사가 부정 기사보다 적어짐</a></li>
+          <ul>
+            <li>
+              긍정-부정: 
+              +8.82% → 
+              -8.06% (21년 → 22년)
+          </li>
+          
+            <li><strong>캐즘 현상</strong>으로 임시적 수요 정체 가능성</li>
+          </ul>
       </ul>
-      <hr />
-      <strong>업무</strong>
-      <ul>
-      <li>기간 : 2024.08.12 ~ 2024.08.24 (2주)</li>
-      <li>인원 : 동아일보 미디어 프론티어 과정 3인</li>
-      <li>협업 : Slack, Notion</li>
-      <li>기여도: 33% (2024년 기사데이터 수집 및 핸들)</li>
-      </ul>
-      <hr>
- 
+    </div>
+
+  </section>
+
 
 <!-- <h3>후석 일지</h3>
 <hr>
