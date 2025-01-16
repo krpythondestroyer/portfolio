@@ -98,7 +98,8 @@ a {
     text-decoration-thickness: 0.7px;
     text-underline-offset: 5px;
     padding-bottom: 1px;
-    display: inline-block;
+    /* display: inline-block; */
+    display: inline; /* 기본 값 */
 }
 
 /* 평소 상태 */

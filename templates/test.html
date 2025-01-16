@@ -47,10 +47,10 @@
             <ul>
                 <li>핵심 : 긁고 - 검색 기능</li>
                 <ul>
-                    <li>API 연동 및 정보 출력</li>
+                    <li>*API 연동 및 정보 출력</li>
                     <ul>
-                        <li>우리말샘,<a href="../images/구글.png">구글</a>, <a href="../images/OpenAI.png">OpenAI<br>
-                        </a> → 네이버 API</li>
+                        <li>우리말샘,구글,OpenAI
+                        </a> → 네이버</li>
 
                     </ul>
                     <li>매니페스토 설정</li>
@@ -105,7 +105,7 @@
                 <li><a href="../images/원스탭기능.png">기능 설명</a></li>
                 <li>플로우 도식화
                     <ul><li><a href="../images/원스탭구조0.png">유저</a></li>
-                        <li><a href="../images/원스탭구조1">데이터</a></li>
+                        <li><a href="../images/원스탭구조1.png">데이터</a></li>
                     </ul>
               </ul>
             </li>
@@ -116,7 +116,7 @@
                 <li>컨셉: 편리함, 심플함, 친절함</li>
               
     
-                <li>구조 : 정의, 배경, 장점, 타겟</li>
+                <li>구조 : 정의, 배경, 장점, 타겟, 유도</li>
          
               
               </ul>
@@ -169,5 +169,19 @@
         </div>
       </section>
       <hr>
+      <strong>각주 </strong>
+      <div>
+      *API 연동 및 정보 출력 - 각 API 소개 
+      <ul><li>우리말샘 : 국립국어원에서 제공하는 단어 사전 오픈 API다. 무료라는 장점을 가지지만 단순 사전 검색으로 정보 제공 유연성이 너무 떨어져 보류되었다.  
+        <a href="https://opendict.korean.go.kr/service/openApiInfo">🔗</a></li>
+      <li>구글 Custom Search Json: 구글에서 제공하는 스니펫형 API로 검색 유연성은 높지만 부분 유료이다.(하루 100쿼리까지 무료, 이후 1000쿼리당 5달러, 총 10000쿼리 제한). 
+        스니펫이라는 원사이트 파싱형 정보 제공 방식이 단어 검색 정보 제공이라는 본 프로젝트 기획의도에 부적합해 보류되었다. <a href="https://developers.google.com/custom-search/v1/overview?hl=ko">🔗</a> </li>
+      <li>OpenAI gpt-4o-mini: OpenAI사에서 제공하는 LLM형 API로 프롬프트, 파인 튜닝 설정 측면에서 정보 출력 유연성은 아주 높지만 부분 유료이다.
+        (입력, 출력 토큰 100만개당 각각 0.15$, 0.60$, <a href="../templates/test2.html">웹 크롤링 및 감성 분석 프로젝트</a> 진행시 사용 금액 500원 미만)
+        LLM이라는 생성형 정보 제공 방식이 기획이 단어 검색 정보 제공이라는 본 프로젝트 기획의도에 부적합해 보류되었다. <a href="https://openai.com/index/openai-api/">🔗</a></li>
+      <li>네이버 Search API: 네이버에서 제공하는 백과사전 API로 무료이지만 하루 25000회 검색 제한이 있다. 
+        백과사전식 정보 제공이라는 측면에서 검색 결과 유연성이 높고 기획 의도에도 적합해 채택되었다. <a href="https://developers.naver.com/docs/serviceapi/search/blog/blog.md">🔗</a></li>
+      </ul>
+    </div>
 </body>
 </html>
