@@ -13,11 +13,13 @@
     <hr>
     <section class="flex-container">
         <div class="flex-container">
-    <strong>배경 및 목표 </strong>
+    <strong>개요 </strong>
     <ul>
         <li>채널A 는 강철부대 W 등 신규 프로그램 방영 준비 중</li>
         <li>4분기에도 최신 자료에 기반한 편성이 필요한 상황</li>
         <li>시청률을 기반으로 한 시청 특성 확인 및 편성 제안</li>
+        <li>*채널A 시청자 층은 뉴스 방송을 중심으로 탄탄</li>
+        <li>**뉴스를 기준으로 연쇄 효과 형성 제안</li>
     </ul>
 </div>
 <div class="flex-container">
@@ -32,11 +34,13 @@
 </div>
 </section>
 <hr>
-    <strong>수집 및 분석</strong>
+    <strong>데이터 과정</strong>
     <section class="flex-container">
         <div class="flex-container">
             <ul>
-                <li>종편사 시청률 자료 (채널A, JTBC, TV조선, MBN)<ul>
+                <li>수집
+                    <ul>
+                        <li>채널A, JTBC, TV조선, MBN 종편 시청률 자료</li>
                         <li>총 447개 (각각 112, 95, 130, 140개)</li><li>2024년 6월 01일~ 2024년 09월 03일</li>
                         <li><a href="../images/편성제안/채널a엑셀예시.png">시간대,시청률, 장르, 방영 시간 등</a>
                         </li>
@@ -51,8 +55,9 @@
         <div class="flex-container">
             <ul>
                 <li>
-                    <a href="../images/편성제안/image3.png">Pandas를 활용한 데이터 전처리 및 분석</a>
+                    전처리 및 분석
                     <ul>
+                        <li><a href="../images/편성제안/image3.png">Pandas를 활용한 데이터 전처리 및 분석</a></li>
                         <li>방영일 : %Y.%m.%d 포맷</li>
                         <li>시청률 : rstrip(‘%’), float 형태</li>
                         <li>최적화 : 순위 및 불필요 열 제거</li><li>분석:&nbsp; 기초 통계,&nbsp;<a href="../images/편성제안/상관관계코드.png" style="font-size: 1rem;">상관관계</a></li>
@@ -64,9 +69,10 @@
     <section class="flex-container">
         <div class="flex-container">
             <ul>
-                <li>
-                    <a href="../images/편성제안/image2.png">Matplotlib을 활용한 데이터 시각화</a>
+                <li>시각화
                     <ul>
+    
+                    <li><a href="../images/편성제안/image2.png">Matplotlib을 활용한 데이터 시각화</a></li>
                         <li>ex) 요일별 방송사 전체 평균 시청률 변화</li>
                         <li>groupby, pivot 활용한 묶음</li>
                         <li>Matplotlib 활용한 꺾은선 그래프</li>
@@ -76,8 +82,9 @@
         </div>
         <div class="flex-container">
             <ul>
-                <li>Scikit-Learn을 활용한 시청률 예측
+                <li>예측 
                     <ul>
+                        <li>Scikit-Learn을 활용한 시청률 예측</li>
                         <li><a href="../images/편성제안/전처리.png">전처리 : 분 단위화, 200분 이하 필터링&nbsp;</a></li>
                         <li>ML : 의사 결정 나무 ➝ 
                             <a href="../images/편성제안/RF코드.png">랜덤 포레스트</a>&nbsp;</li>
@@ -87,50 +94,30 @@
             </ul>
         </div>
     </section>
-    
-
     <hr>
 
-    <section class="flex-container">
-        <div class="flex-container">
-            <strong>결과 및 해석</strong>
-    <ul>
-        <li><strong>"채널A 시청자 층은 뉴스 방송을 중심으로 탄탄"</strong></li>
-        <ul>
-        <li>프로그램별: 뉴스와 다음 프로 <a href="../images/편성제안/뉴스와 다음 프로그램.png" style="font-size: 1rem;">편차 ↓</a><span style="font-size: 1rem;">, </span><a href="../images/편성제안/상관관계결과.png" style="font-size: 1rem;">상관 관계 보통</a></li>
-        <li>요일별:<a href="../images/편성제안/요일별 시청률 변동.png"> 평균 시청률 ↓ 편차 ↓</a>
-        </li>
-        <li>시간대별: <a href="../images/편성제안/저녁 및 프라임 시청률.png">최고 시청률 ↓</a>, <a href="../images/편성제안/저녁 및 프라임 시간대 시청률 차이.png">편차 ↓</a></li>                
-    </ul>
-  </ul>
-</div>
-<div class="flex-container">
-
-    <strong>제안</strong>
-
-    <ul>
-        <li><strong>"뉴스를 기준으로 연쇄 효과 형성" </strong>
-            </li>
-            <ul><li> 
-                강조 프로그램 편성을 뉴스 후 타임으로 편성</li>
-            <ul>
-            <li>EX) 강철부대 W : 21:40 → 20:10 <br></li>
-        </ul>
-            </ul>
-            <li>현 기대 평균 시청률 : 2.74</li>
-            <ul>
-              <li>RMSE : 0.46 | R<sup>2</sup> : 0.86</li>
-            <a href="../images/편성제안/강철부대W 시청률.png"><li>실제 평균 시청률 : 2.68</li></a>
-          </ul>       
-        </ul>
-    </div>
 </section>
 
 
 
 
-    <hr>
-
+    <strong>각주</strong><br>
+    *채널A 시청자 층은 뉴스 방송을 중심으로 탄탄
+    <br>프로그램별: 뉴스와 다음 프로 <a href="../images/편성제안/뉴스와 다음 프로그램.png" style="font-size: 1rem;">편차 ↓</a><span style="font-size: 1rem;">, </span><a href="../images/편성제안/상관관계결과.png" style="font-size: 1rem;">상관 관계 보통</a>
+    <br>요일별:<a href="../images/편성제안/요일별 시청률 변동.png"> 평균 시청률 ↓ 편차 ↓</a>
+    <br>시간대별: <a href="../images/편성제안/저녁 및 프라임 시청률.png">최고 시청률 ↓</a>, <a href="../images/편성제안/저녁 및 프라임 시간대 시청률 차이.png">편차 ↓</a>
+<br>
+**<br>
+강조 프로그램 편성을 뉴스 후 타임으로 편성</li>
+<ul>
+<li>EX) 강철부대 W : 21:40 → 20:10 <br></li>
+</ul>
+</ul>
+<li>현 기대 평균 시청률 : 2.74</li>
+<ul>
+  <li>RMSE : 0.46 | R<sup>2</sup> : 0.86</li>
+<a href="../images/편성제안/강철부대W 시청률.png"><li>실제 평균 시청률 : 2.68</li></a>
+</ul>   
         <style>
             body {
                     max-width: 800px; 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위키백과 스타일 레이아웃</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .text-box {
+            flex: 2;
+            padding: 16px;
+            border-right: 1px solid #ddd;
+        }
+
+        .image-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 10px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .image-box img:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-box">
+            <h2>위키백과 스타일 텍스트</h2>
+            <p>이 레이아웃은 위키백과와 유사한 형식으로 디자인되었습니다. 좌측에는 본문 텍스트가 배치되어 있으며, 우측에는 관련 이미지를 표시할 수 있습니다. 이는 정보 전달을 보다 직관적으로 만들어 줍니다.</p>
+            <p>예를 들어, 특정 주제에 대한 설명을 제공할 때, 관련 이미지를 우측에 배치하여 시각적 정보를 추가할 수 있습니다.</p>
+        </div>
+        <div class="image-box">
+            <img src="https://via.placeholder.com/150" alt="이미지 1">
+            <img src="https://via.placeholder.com/150" alt="이미지 2">
+            <img src="https://via.placeholder.com/150" alt="이미지 3">
+        </div>
+    </div>
+</body>
+</html>
