@@ -35,17 +35,20 @@
       <strong>데이터 과정</strong>
       <section class="flex-container">
         <div class="flex-container">
-      <ul>
-        <li>수집 (웹 크롤링)</li>
-        <ul>
-            <li>***Selenium → BeautifulSoup</li>
-            <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사 웹크롤링</li>
-            <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
-          </ul>
+          <ol>
+            <li>수집 (웹 크롤링)</li>
+            <ul>
+              <li>***Selenium → BeautifulSoup</li>
+              <li>포털 다음 "전기차" 8월 9일 검색시 기사 제목 및 언론사 웹크롤링</li>
+              <li>2020년~2024년 (연도별 1000개, 총 5000개, 정확도순, CSV)</li>
+            </ul>
+          </ol>
         </div>
         <div class="flex-container">
-          <ul>
+          
+          <ol start="2">
             <li>전처리 (자연어 분석, 유저 단어 구축)</li>
+         
             <ul>
               <li>KoNLPy → Kiwipiepy</li>
               <li>최신성 ↑  간편성 ↑</li>
@@ -53,14 +56,15 @@
               <li>분리: "전기차" ↛  "전기" "차", 공란 처리</li>
               <li><a href="../images/형태소분석.png">사진</a></li>
             </ul>
+          </ul>
         </ul>
-      </ul>
-    </div>
-
+      </ol>
+      </div>
+      
   </section>
   <section class="flex-container">
     <div class="flex-container">
-      <ul>
+      <ol start="3">
         <li>분석 및 시각화</li>
         <ul>
             <li>Pandas를 활용한 연관, 고빈도 단어분석</li>
@@ -71,9 +75,10 @@
 
 
       </ul>
+    </ol>
     </div>
     <div class="flex-container">
-<ul>
+<ol start="4">
   <li>감성분석</li>
   <ul>
             <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 분석</a></li>
@@ -83,6 +88,7 @@
         <li><a href="../images/감성분석ML.png">ML</a> → <a href="../images/감성분석AI.png">LLM</a> </li>
 
     </ul>
+  </ol>
     </div>
 
   </section>

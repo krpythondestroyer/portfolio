@@ -21,7 +21,7 @@
   
           </li>
           <li>
-              간편 검색으로 뜻을 즉시 확인 가능한 프로그램 개발 
+              *간편 검색으로 즉시 뜻 확인 가능한 프로그램 개발 
               <!-- <a href="../images/원스탭레퍼.png">EX) 전자책 각주</a>   -->
                <li>간단한 설명 자료 작성 및 설문조사 수집 중</li>
                   <li>독자들의 콘텐츠 독해력 상승 및 편의성 증대 기대</li>
@@ -33,7 +33,7 @@
       <strong>업무</strong>
       <ul>
           <li>기간: 2024.10.07 ~ 2024.11.25 (8주)</li>
-          <li>방식: MVP 모델(레퍼 →<a href="../images/깡통.png">구상</a> → 핵심 → 부가)</li>
+            <li>방식: MVP</li>
           <li>인원: 동아일보 미디어 프론티어 과정 1인</li>
           <li>일정: <a href="../images/원스탭일정.png">Notion</a></li>
           <li>기여: 파이널 개인 프로젝트</li>
@@ -42,118 +42,98 @@
     </div>
 
   </section>
-  <hr />
+  <hr>
+  <strong>단계</strong>
   <section class="flex-container">
-    <div class="flex-container">
-          <strong>개발</strong>
-            <ul>
-                <li>핵심 : 긁고 - 검색 기능</li>
-                <ul>
-
-                        <li>우리말샘,구글,OpenAI
-                        </a> → 네이버</li>
-                        <li>CORS 문제 해결을 위한 퍼미션 설정</li>
-                        <li>크롬 로컬 스토리지 활용</li>
-
-                    </ul>
-
-                    <ul>
-
-                    </ul>
-                    <ul>
-                        <li>IFRAME → SIDEPANEL</li>
-                    </ul>
-                    
-
-                    <ul>
-
-                    </ul>
-                </ul>
-
-            </ul>
-            <ul>
-              <li>부가 : 수정 및 링크 한 탭 이동 기능</li>
-              <ul>
-                  <li>강조 : strong 태그</li>
-
-                  <li>삭제 : 크롬 로컬 스토리지값 삭제</li>
-
-                  <li>원문 이동 :API에서 파싱된 URL 이동</li>
-
-                  <li>북마크 이동 : 검색시 저장된 URL 이동</li>
-
-              </ul>
-          </ul>
-            
-          </div>
-          <div class="flex-container">
-            <strong>기타</strong>
-              <ul>
-                <li>"디지털 트윈" 검색 예시 </li>
-                <ul>
-                  <li><a href="../images/원스탭 박스.png">화면.jpg</a>, <a href="../images/원스탭기능.png">내용.jpg</a></li>
-                </ul>
-                
-                  <li>설문조사 : 
-                    <ul>
-                      <a href="../images/설문조사1.png">워드 초안</a> → 
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoTWd8JKbFUzhIDFV3awxU0VNc8jvNuRLrIIzcQADtPoVmdA/viewform?usp=header">구글폼🔗</a>
-                      
-                  </li>
-                </ul>
-                </ul>
-                <ul>
-                  <li>측정 :
-                   기간별 총 단어 검색 수 
-                            <ul><li>제공 : "네이버 API 통계" </li>
-                            </ul>
-
-                    </ul>
-              
-
-
-
-
-
-
-              </ul>
-            </li>
+      <div class="flex-container">
+        <ol start="1">
+          <li>기획</li>
+       
+          <ul>
+              <li>문제 발견 : 독자 어휘력, 문해력 문제 등</li>
+              <li>아이디에이션 : 사이트 개설 → 익스텐션 개발</li>
+              <li>구상 : 링크 형태 → 각주 형태</li>
+              <li>레퍼런스 : 팝업 방식 → 화면 분할 방식</li>
           
-          <ul>
-            <li><a href="../images/원스탭홍보2.jpg">설명 자료.jpg</a>
-              <ul>
-                <!-- <li>컨셉: 편리함, 심플함, 친절함</li> -->
-              
-    
-                <li>구조 : 정의, 배경, 장점, 타겟, 유도</li>
-                
-              
-              </ul>
-              <ul>
+            </ul>
+        </ul>
+      </ul>
+    </ol>
+  </div>
+    <div class="flex-container">
+      <ol start="2">
+        <li>핵심 개발 : 긁고 - 검색 기능</li>
+        <ul>
+  
+          <li>**API : 우리말샘,구글,OpenAI
+          </a> → 네이버</li>
+          <li>화면 : IFRAME → SIDEPANEL</li>
+          <li>데이터 : 윈도우 로컬 → 크롬 로컬 스토리지</li>
+          <li>통신 : 백엔드 개발 → 퍼미션 설정</li>
+        </ul>
+      </ol>
+    </div>
+  </div>
+  
+  </section>
+  <section class="flex-container">
+  <div class="flex-container">
+  <ol start="3">
+    <li>부가 개발: 수정 및 링크 한 탭 이동 기능</li>
+    <ul>
+      <li>강조 : strong 태그</li>
+  
+      <li>삭제 : 크롬 로컬 스토리지값 삭제</li>
+  
+      <li>원문 이동 :API에서 파싱된 URL 이동</li>
+  
+      <li>북마크 이동 : 검색시 저장된 URL 이동</li>    
+  </ul>
+  
+  
+  </ul>
+  </ol>
+  </div>
+  <div class="flex-container">
+  <ol start="4">
+  <li>개선</li>
+  <ul>
+  
 
+     
+      <li>설문조사 :  <a href="../images/설문조사1.png">워드 초안</a> → 
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoTWd8JKbFUzhIDFV3awxU0VNc8jvNuRLrIIzcQADtPoVmdA/viewform?usp=header">구글폼🔗</a>
+     
+            
+              <li>측정 :
+                  기간별 총 단어 검색 수 
+                           <ul><li>제공 : "네이버 API 통계" </li>  
 
-
-                        </ul>
-
-                        <li>플로우 도식화
-                          <ul><li><a href="../images/원스탭구조0.png">유저.jpg</a>, <a href="../images/원스탭구조1.png">데이터.jpg</a></li>
-                              
+                           
                           </ul>
-              </ul>
+                              <li><a href="../images/원스탭홍보2.jpg">설명 자료.jpg</a>
+                                  <ul>
+                                    <!-- <li>컨셉: 편리함, 심플함, 친절함</li> -->
+                                  
+                        
+                                    <li>구조 : 정의, 배경, 장점, 타겟, 유도</li></ul>
 
-          </ul>
-        </div>
-          <ul>
-            <li></li>
-          </ul>
-
-        </div>
-    </section>  
-
-      <hr>
+  
+                                  </ol>
+  </div>
+  
+  </section>
+  <hr />
       <strong>각주 </strong>
       <div>
-      *API 연동 및 정보 출력 - 각 API 소개 
+        *
+        <ul>
+        <li>"디지털 트윈" 검색 예시 :<a href="../images/원스탭 박스.png">화면.jpg</a>, <a href="../images/원스탭기능.png">내용.jpg</a></li>
+        <li>플로우 도식화 : <a href="../images/원스탭구조0.png">유저.jpg</a>, <a href="../images/원스탭구조1.png">데이터.jpg</a></li>
+              
+          </ul>
+      </ul>
+      **
       <ul><li>우리말샘 : 국립국어원에서 제공하는 단어 사전 오픈 API다. 무료라는 장점을 가지지만 단순 사전 검색으로 정보 제공 유연성이 너무 떨어져 보류되었다.  
         <a href="https://opendict.korean.go.kr/service/openApiInfo">🔗</a></li>
       <li>구글 Custom Search Json: 구글에서 제공하는 스니펫형 API로 검색 유연성은 높지만 부분 유료이다.(하루 100쿼리까지 무료, 이후 1000쿼리당 5달러, 총 10000쿼리 제한). 
@@ -167,7 +147,10 @@
 
 
     </div>
-
+    <br>
+    <!-- <li>통신 : CORS 문제 해결을 위한 퍼미션 설정</li>
+    <li><a href="../images/깡통.png"> 깡통</a></li> -->
+    
 
 </body>
 </html>
