@@ -94,14 +94,20 @@ body {
 
 /* Link styles */
 a {
-    color: rgb(0, 0, 0);
+    text-decoration: none; /* 밑줄 제거 */
+    color: #0645ad
     text-decoration-thickness: 0.7px;
     text-underline-offset: 5px;
     padding-bottom: 1px;
     /* display: inline-block; */
     display: inline; /* 기본 값 */
+
 }
 
+a:visited {
+    color: #0b0080; /* 방문한 링크 색상 (#0b0080) */
+  }
+  
 /* 평소 상태 */
 #phoneIcon::before {
     content: "✆"; /* 전화기 아이콘 표시 */
