@@ -81,7 +81,7 @@
 <ol start="4">
   <li>감성분석</li>
   <ul>
-            <li><a href="../images/감성분석.png">OpenAI API를 활용한 긍정/부정/중립 분석</a></li>
+            <li>OpenAI API를 활용한 긍정/부정/중립 분석</li>
 
         <li>모델: gpt-4o-mini</li>
         <li>역할: 감성분석 챗봇, 긍정, 부정 중립 표시 </li>
@@ -100,6 +100,34 @@
       24년은 "현대차”와 "기아"차가 고빈도였다. 이는 포털사 기사 정렬 이슈로 보인다. <a href="../images/워드클라우드.png">워드클라우드.jpg</a>
 <br>**  긍정-부정:  +8.82% → -8.06% (21년 → 22년) <a href="../images/감성분석결과.png">감성분석결과.jpg</a>
 <br>*** 일반적으로 Selenium의 경우 동적 웹 크롤링, BeautifulSoup의 경우 정적 웹 크롤링에 사용된다.<a href="../images/웹크롤링.png">웹크롤링.jpg</a>
+<br>****
+<summary>
+<details>
+<pre>
+import os
+import pandas as pd
+from dotenv import load_dotenv
+from openai import OpenAI
+
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+def openai(api_key, user_input):
+client = OpenAI(api_key=api_key)
+
+completion = client.chat.completions.create(
+model='gpt-4o-mini',
+messages=[
+{'role': 'system', 'content': '너는 전기차 뉴스 제목의 감성분석을 하는 챗봇이야, 제목이 긍정, 부정, 중립인지만 표시해줘.'},
+{'role': 'user', 'content': user_input},
+
+]
+
+return completion.choices[ø].message.content
+</pre>
+</details>
+</summary>
 </section> 
 
 
