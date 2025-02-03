@@ -142,14 +142,17 @@ a:visited {
     }
 
     a {
-        text-decoration: none; /* PDF 저장 시 모든 링크의 밑줄 없애기 */
-        pointer-events: none; /* PDF에서 모든 링크 클릭 비활성화 */
+        /* text-decoration: none; */
+         /* PDF 저장 시 모든 링크의 밑줄 없애기 */
+        /* pointer-events: none;  */
+        /* PDF에서 모든 링크 클릭 비활성화 */
         cursor: default; /* 마우스 커서를 기본 상태로 변경 */
     }
 
     /* 링크의 href 속성도 제거 */
     a[href] {
-        pointer-events: none; /* 링크 비활성화 */
+        /* pointer-events: none;  */
+        /* 링크 비활성화 */
     }
 }
 
@@ -187,6 +190,7 @@ pre {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: nowrap;
 }
 
 /* For summary dropdown */
@@ -292,7 +296,8 @@ h3 {
             }
         
             .flex-container {
-                flex-direction: column; /* 모바일에서 열 방향으로 정렬 */
+                /* flex-direction: column;  */
+                /* 모바일에서 열 방향으로 정렬 */
                 gap: 10px; /* 각 요소 간격 추가 */
             }
         
@@ -348,6 +353,7 @@ h3 {
     display: flex;
     height: 100vh; /* 화면 전체 높이 */
 }
+
 
 .left-section {
     width: 40%; /* 화면의 35% 폭 */
