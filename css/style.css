@@ -121,6 +121,16 @@ a:visited {
     content: "✒︎"; /* 평소에는 ✒︎ 표시 */
 }
 
+@media print {
+    a {
+      color: black !important;
+      text-decoration: none; /* 밑줄 제거 (선택 사항) */
+      pointer-events: none; 
+      /* PDF에서 모든 링크 클릭 비활성화 */
+    }
+  }
+
+  
 /* PDF 저장 시 */
 @media print {
     #phoneIcon::before {
@@ -142,11 +152,11 @@ a:visited {
     }
 
     a {
-        /* text-decoration: none; */
+
+        text-decoration: none;
          /* PDF 저장 시 모든 링크의 밑줄 없애기 */
-        /* pointer-events: none;  */
-        /* PDF에서 모든 링크 클릭 비활성화 */
-        /* cursor: default; */
+
+        cursor: default;
          /* 마우스 커서를 기본 상태로 변경 */
     }
 
@@ -157,11 +167,7 @@ a:visited {
     }
 }
 
-@media print {
-    a::after {
-      content: " (" attr(href) ") ";
-    }
-  }
+
   
 
 /* HR styles */
