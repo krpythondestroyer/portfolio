@@ -146,17 +146,23 @@ a:visited {
          /* PDF 저장 시 모든 링크의 밑줄 없애기 */
         /* pointer-events: none;  */
         /* PDF에서 모든 링크 클릭 비활성화 */
-        cursor: default; /* 마우스 커서를 기본 상태로 변경 */
+        /* cursor: default; */
+         /* 마우스 커서를 기본 상태로 변경 */
     }
 
     /* 링크의 href 속성도 제거 */
-    a[href] {
+    /* a[href] { */
         /* pointer-events: none;  */
         /* 링크 비활성화 */
     }
 }
 
-
+@media print {
+    a::after {
+      content: " (" attr(href) ") ";
+    }
+  }
+  
 
 /* HR styles */
 hr {
@@ -170,6 +176,7 @@ hr {
 pre {
     font-size: 1rem;
 }
+
 
 /* Media query for mobile screens (smaller devices) */
 @media (max-width: 600px) {
