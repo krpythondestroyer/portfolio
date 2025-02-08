@@ -76,10 +76,10 @@
                 <li>
                     전처리 및 분석
                     <ul>
-                        <li><a href="../images/편성제안/image3.png">Pandas를 활용한 데이터 전처리 및 분석</a></li>
+                        <li>Pandas를 활용한 데이터 전처리 및 분석</li>
                         <li>방영일 : %Y.%m.%d 포맷</li>
                         <li>시청률 : rstrip(‘%’), float 형태</li>
-                        <li>최적화 : 순위 및 불필요 열 제거</li><li>분석:&nbsp; 기초 통계,&nbsp;<a href="../images/편성제안/상관관계코드.png" style="font-size: 1rem;">상관관계</a></li>
+                        <li>최적화 : 순위 및 불필요 열 제거</li><li>분석:&nbsp; 기초 통계,&nbsp;상관관계</li>
                     </ul>
                 </li>
             </ol>
@@ -91,7 +91,7 @@
                 <li>시각화
                     <ul>
     
-                    <li><a href="../images/편성제안/image2.png">Matplotlib을 활용한 데이터 시각화</a></li>
+                    <li>Matplotlib을 활용한 데이터 시각화</li>
                         <li>ex) 요일별 방송사 전체 평균 시청률 변화</li>
                         <li>groupby, pivot 활용한 묶음</li>
                         <li>Matplotlib 활용한 꺾은선 그래프</li>
@@ -104,9 +104,9 @@
                 <li>예측 
                     <ul>
                         <li>Scikit-Learn을 활용한 시청률 예측</li>
-                        <li><a href="../images/편성제안/전처리.png">전처리 : 분 단위화, 200분 이하 필터링&nbsp;</a></li>
+                        <li>전처리 : 분 단위화, 200분 이하 필터링&nbsp;</li>
                         <li>ML : 의사 결정 나무 ➝ 
-                            <a href="../images/편성제안/RF코드.png">랜덤 포레스트</a>&nbsp;</li>
+                            랜덤 포레스트&nbsp;</li>
                         <li>범용성 ↑ 설명력 ↑ 잔차합 ↓</li>
                     </ul>
                 </li>
@@ -123,7 +123,7 @@
     <strong>각주</strong><br>
     *<br>
     <ul>
-    <li>프로그램별: 뉴스와 다음 프로 <a href="../images/편성제안/뉴스와 다음 프로그램.png" style="font-size: 1rem;">편차 ↓</a><span style="font-size: 1rem;">, </span><a href="../images/편성제안/상관관계결과.png" style="font-size: 1rem;">상관 관계 보통</a></li>
+    <li>프로그램별: 뉴스와 다음 프로 <a href="../images/편성제안/뉴스와 다음 프로그램.png" style="font-size: 1rem;">편차 ↓</a>, <a href="../images/편성제안/상관관계결과.png">상관 관계 보통</a></li>
     <li>요일별:<a href="../images/편성제안/요일별 시청률 변동.png"> 평균 시청률 ↓ 편차 ↓</a></li>
     <li>시간대별: <a href="../images/편성제안/저녁 및 프라임 시청률.png">최고 시청률 ↓</a>, <a href="../images/편성제안/저녁 및 프라임 시간대 시청률 차이.png">편차 ↓</a></li>
 </ul>
@@ -140,6 +140,147 @@
   <li>RMSE : 0.46 | R<sup>2</sup> : 0.86</li>
 <li>실제 평균 시청률 : 2.68</li>
 </ul>   
+<br>
+***
+<summary>
+    <details>
+    <pre>
+    #Pandas를 활용한 데이터 전처리 및 분석
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
+    import matplotlib as mpl
+    
+    #폰트설정
+    mpl.rcParams['font. family' ] = 'AppleGothic'
+    mpl.rcParams['axes. unicode_minus' ] = False
+    
+    df = pd.read_csv('data/jp_program.csv', encoding='utf-8')
+    
+    df.drop(columns=['Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15', '종합 순위', '장르별 순
+    9l'], inplace=True)
+    df['방영일'] = pd.to_datetime(df['방영일'], format='%Y.%m.%d')
+    df[ '시청률'] = df['시청률'].str.rstrip('%').astype(float)|
+
+    #상관관계
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    
+    # 예시 데이터 로드 (이 부분은 실제 데이터에 맞게 조정해야 합니다)
+    # result = pd. read_csv('your_data,csv')
+    
+    # 날짜 헣식으로 변환
+    result,loc[:, '방영일'] = pd,to_datet ime(result ['방영일 '])
+    
+    # 뉴스와 프로그램의 시청률 간의 상관관계 분석
+    correlat ion_data = result [['제목_x', '제목_y', '시철률_x', '시철률_y']].copy()
+    
+    # 상관관계 계산
+    correlat ion_matrix = correlat ion_data.groupby(['제목_x', '제목_y']),apply(lambda df : df [['시청률_x', '시청률_y']].corr(),iloc[0, 1]),reset_index()
+    correlat ion_matrix.columns = ['제목_x', '제목_y', 'Correlat ion']
+    
+    # 상관관계 시각화
+    plt.figure(figsize=(14, 10))
+    pivot_table = correlation_matrix.pivot_table(index='제목_x', columns='제목_y', values='Correlation')
+    
+    # 히트맵 생성
+    sns, heatmap(pivot_table, annot=True, fmt=",2f", cmap='coolwarm', center=O, linewidths=0,5, linecolor='black')
+    
+    # 제목과 레이블 설정
+    plt.title('뉴스와 프로그램 쌍별 시청률 간의 상관관계', fontsize=16)
+    plt.xlabel('뉴스 제목', fontsize=12)
+    plt.ylabel('프로그램 제목', fontsize=12)
+    plt.xt icks(rotat ion=45, ha='right') # X축 레이블 회전
+    plt.yticks(rotat ion=0) # Y축 레이블 회전
+    
+    # 그래프 출력
+    plt.tight_layout ()
+    plt, show()
+
+    #분 단위화
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    df = pd.read_csv('data/jp_program.csv', encoding='utf-8')
+
+    df.drop(columns=['Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15', '종합 순위', '장르별 순
+    위'], inplace=True)
+
+    df['방영일'] = pd.to_datetime(df['방영일'], format='%Y.%m.%d')
+
+    df[ '방영일'] = pd.to_datetime(df[ '방영일'])
+    df['요일'] = df['방영일 '].dt.dayofweek # Monday=0, Sunday=6
+
+    df[ '시청률'] = df['시청률'].str.rstrip('%').astype(float)
+
+    df['방송시간'] = df['방송시간'].str.extract('(\d+):(\d+)').astype(float).apply(lambda x:
+    x[0] * 60 + x[1], axis=1)
+    df = df[df['방송시간'] <= 200]
+
+    #랜덤 포레스트
+    from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
+    from sklearn.ensemble import RandomForestRegressor
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_squared_error
+    from sklearn.metrics import r2_score
+
+    encoder = OneHotEncoder(sparse=False)
+    encoded_features =encoder.fit_transform(df[['방송사', '요일', '장르']])
+    encoded_feature_names = encoder.get_feature_names_out()
+
+    encoded_df = pd. DataFrame(encoded_features, columns=encoded_feature_names)
+
+    final_df = pd.concat([df, encoded_df], axis=1)
+    final_df = final_df.dropna()
+
+    X= final_df.drop(columns=['NO', '방송사', '제목', '방영일', '요일', '장르', '시청률', '방송시
+    y = final_df[' N']
+
+    scaler = MinMaxScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+
+    model = RandomForestRegressor(n_estimators=100, max_depth=5, random_state=2024)
+    model.fit(X_train, y_train)
+
+    predictions = model.predict(X_test)
+    mse = mean_squared_error(y_test, predictions)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, predictions)
+
+    print(f'RMSE: {rmse}')
+    print(f'R2: {r2}')
+
+
+    # Matplotlib을 활용한 데이터 시각화
+    broadcaster_day_viewership =df.groupby(['방송사', '요일']).agg({'시청률': 'mean'}).reset
+    index()
+    
+    broadcaster_pivot = broadcaster_day_viewership.pivot(index='2', columns='=Ah, val
+    ues='시청률').fillna(0)
+    
+    days_order = ['월','화','수','목','금','토','일']
+    broadcaster_pivot = broadcaster_pivot.reindex(days_order)
+    
+    plt.figure(figsize=(14, 8))
+    for broadcaster in broadcaster_pivot.columns:
+    plt.plot(broadcaster_pivot.index, broadcaster_pivot[broadcaster], marker='o', label=
+    broadcaster)
+    
+    plt.title('방송사 별 요일별 평균 시청률', fontsize=16)
+    plt.xlabel('요일', fontsize=14)
+    plt.ylabel('평균 시청률 (%)', fontsize=14)
+    plt.grid(True)
+    plt.legend(title='방송사')
+    plt.show(>|
+    </pre>
+    </details>
+    </summary>
         <style>
             body {
                     max-width: 800px; 
